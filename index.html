@@ -1588,7 +1588,37 @@ const $=s=>document.querySelector(s);
 function read(key){try{return JSON.parse(localStorage.getItem(key)||'null')}catch{return null}}
 function currentUser(){const u=read('na_current_user');if(u&&u.username)return {name:u.username,role:String(u.role||'student').toLowerCase(),createdAt:u.createdAt||''};const session=read('na_session_local_v1');if(session&&session.name)return {name:session.name,role:String(session.role||'student').toLowerCase(),createdAt:session.createdAt||''};return null}
 function renderProfile(){const card=$('#naQuickProfile'),name=$('#naQuickProfileName'),role=$('#naQuickProfileRole'),status=$('#naQuickProfileStatus'),avatar=$('#naQuickAvatar');if(!card||!name||!role||!status)return;const setText=(el,value)=>{if(el&&el.textContent!==value)el.textContent=value};const u=currentUser();if(!u){setText(name,'GUEST PROFILE');setText(role,'Not signed in');setText(status,'Create an account to start learning');setText(avatar,'⌘');return}const labels={owner:'Platform Owner',admin:'Administrator',teacher:'Teacher',student:'Student'};setText(name,u.name);setText(role,labels[u.role]||'Student');setText(status,'Local browser profile · '+(u.createdAt?'Account active':'Session active'));setText(avatar,u.role==='owner'?'♛':u.role==='teacher'?'✎':u.role==='admin'?'⚙':'⌘')}
-function openAccount(mode){try{if(typeof openModule==='function'){openModule('accountcenter')}else{const overlay=document.getElementById('moduleOverlay');const content=document.getElementById('moduleContent');if(overlay&&content){overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';content.innerHTML='<div class="academy-page"><h2>Account Center could not load</h2><p>Refresh the page and try again.</p></div>'}}}catch(err){console.error('Network Academy account navigation failed:',err);return}setTimeout(()=>{const target=mode==='create'?$('#naSignupUser'):$('#naLoginUser');if(target){target.focus({preventScroll:false});target.scrollIntoView({block:'center',behavior:'smooth'})}else{const fallback=mode==='create'?$('#naSignupForm'):$('#naLoginForm');if(fallback)fallback.scrollIntoView({block:'center',behavior:'smooth'})}},250)}
+function openAccount(mode){
+ const overlay=document.getElementById('moduleOverlay');
+ const content=document.getElementById('moduleContent');
+ try{
+  if(typeof openModule==='function')openModule('accountcenter');
+ }catch(err){
+  console.error('Account Center navigation failed; opening the account view directly:',err);
+ }
+ /* Ensure the two Quick Menu buttons still open the account forms if a module initializer fails. */
+ if(overlay&&content&&!overlay.classList.contains('open')){
+  try{
+   const title=document.getElementById('moduleHeroTitle');
+   const subtitle=document.getElementById('moduleHeroSubtitle');
+   const cover=document.getElementById('moduleCover');
+   if(title)title.textContent='Create Profile · Log In';
+   if(subtitle)subtitle.textContent='Manage your local Network Academy profile';
+   if(cover){cover.style.backgroundImage='linear-gradient(90deg,#070611F2,#07061155)';cover.innerHTML='<div class="module-cover-copy"><div class="eyebrow">NETWORK ACADEMY / ACCOUNT CENTER</div><h2>Create Profile · Log In</h2><p>Student profile access</p></div>';}
+   if(typeof pageText!=='undefined'&&pageText.accountcenter)content.innerHTML=pageText.accountcenter;
+   overlay.classList.add('open');
+   overlay.setAttribute('aria-hidden','false');
+   document.body.style.overflow='hidden';
+   try{if(typeof initAccountCenter==='function')initAccountCenter()}catch(initErr){console.error('Account form setup issue:',initErr)}
+  }catch(fallbackErr){console.error('Could not display the account view:',fallbackErr)}
+ }
+ setTimeout(()=>{
+  const target=document.getElementById(mode==='create'?'naSignupUser':'naLoginUser');
+  if(target){target.focus({preventScroll:true});target.scrollIntoView({block:'center',behavior:'smooth'});return}
+  const form=document.getElementById(mode==='create'?'naSignupForm':'naLoginForm');
+  if(form)form.scrollIntoView({block:'center',behavior:'smooth'});
+ },250);
+}
 document.addEventListener('click',e=>{const target=e.target;const btn=target&&target.closest?target.closest('[data-na-quick-auth]'):null;if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();openAccount(btn.dataset.naQuickAuth)},true);
 document.addEventListener('submit',e=>{if(['naLoginForm','naSignupForm','naStaffForm'].includes(e.target.id)){setTimeout(renderProfile,80);setTimeout(renderProfile,350)}});
 document.addEventListener('click',e=>{if(e.target.closest('#naLogout')||e.target.closest('#naLogoutBtn'))setTimeout(renderProfile,60)});
