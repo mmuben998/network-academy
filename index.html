@@ -1521,7 +1521,7 @@ document.addEventListener('click',e=>{
   if(list)list.innerHTML=checks.map(x=>'<div class="result '+(x[1]?'':'warn')+'">'+(x[1]?'✓ ':'⚠ ')+x[0]+': '+(x[1]?'OK':'Not detected or unavailable')+'</div>').join('');
   if(errors)errors.textContent=runtimeErrors.length?runtimeErrors.map((x,i)=>(i+1)+'. '+x.type+': '+x.message+(x.source?' ('+x.source+':'+x.line+')':'')).join('\n'):'No JavaScript errors have been recorded during this session.';
  }
-});
+},true);
 const body=document.getElementById('drawerBody');
 if(body)new MutationObserver(applyVisibility).observe(body,{childList:true,subtree:true});
 window.addEventListener('storage',applyVisibility);
