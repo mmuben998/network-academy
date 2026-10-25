@@ -1515,9 +1515,9 @@ document.addEventListener('click',e=>{
    ['Log In and Create Account at top',!!document.querySelector('#drawerBody [data-na-quick-auth="login"]')&&!!document.querySelector('#drawerBody [data-na-quick-auth="create"]')],
    ['Profile is informational, not a button',!!document.getElementById('naQuickProfile')&&!document.getElementById('naQuickProfile')?.closest('button')],
    ['Quiz Studio menu entry',!!document.querySelector('[data-drawer-page="quizstudio"]')],
-   ['Student registration form',!!document.getElementById('naSignupForm')],
-   ['Login form',!!document.getElementById('naLoginForm')],
-   ['Owner staff-role form',!!document.getElementById('naStaffForm')&&!!document.getElementById('naStaffRole')],
+   ['Student registration template',typeof pageText!=='undefined'&&!!pageText.accountcenter&&pageText.accountcenter.includes('id="naSignupForm"')],
+   ['Login form template',typeof pageText!=='undefined'&&!!pageText.accountcenter&&pageText.accountcenter.includes('id="naLoginForm"')],
+   ['Owner staff-role template',typeof pageText!=='undefined'&&!!pageText.accountcenter&&pageText.accountcenter.includes('id="naStaffForm"')&&pageText.accountcenter.includes('id="naStaffRole"')],
    ['Mobile viewport meta',!!document.querySelector('meta[name="viewport"]')],
    ['Mobile layout styles',!!document.getElementById('na-quickmenu-mobile-polish')],
    ['Browser storage',(()=>{try{const k='na_diag_test';localStorage.setItem(k,'1');localStorage.removeItem(k);return true}catch{return false}})()]
