@@ -1593,5 +1593,68 @@ window.addEventListener('storage',renderProfile);document.addEventListener('DOMC
 const observer=new MutationObserver(renderProfile);observer.observe(document.documentElement,{childList:true,subtree:true});renderProfile();
 })();
 </script>
+
+<!-- Independent Quick Menu interaction recovery: isolated from the main app script -->
+<script id="naQuickMenuRecoveryLayer">
+(function(){
+  if(window.__naQuickMenuRecoveryInstalled)return;
+  window.__naQuickMenuRecoveryInstalled=true;
+  function byId(id){return document.getElementById(id)}
+  function safeCall(fn){try{if(typeof fn==='function')return fn()}catch(err){console.error('Network Academy menu action failed:',err)}}
+  function closeMenu(){byId('drawer')?.classList.remove('open');byId('drawerBack')?.classList.remove('open');byId('drawer')?.setAttribute('aria-hidden','true')}
+  function openMenu(){byId('drawer')?.classList.add('open');byId('drawerBack')?.classList.add('open');byId('drawer')?.setAttribute('aria-hidden','false')}
+  function module(page){if(typeof openModule==='function'){safeCall(()=>openModule(page));return true}return false}
+  function account(mode){
+    if(!module('accountcenter'))return;
+    setTimeout(function(){
+      const form=byId(mode==='create'?'naSignupForm':'naLoginForm');
+      form?.scrollIntoView({behavior:'smooth',block:'center'});
+      const field=byId(mode==='create'?'naSignupUser':'naLoginUser');
+      field?.focus({preventScroll:true});
+    },220);
+  }
+  function record(label){safeCall(()=>{if(typeof naRecordStudentEvent==='function')naRecordStudentEvent(label)})}
+  function applyMenuFilter(){
+    const q=(byId('menuSearch')?.value||'').trim().toLowerCase();
+    const active=document.querySelector('[data-menu-filter].active')?.dataset.menuFilter||'all';
+    document.querySelectorAll('#drawerBody [data-drawer-page]').forEach(b=>{
+      const cat=b.dataset.menuCategory||'learn';
+      b.hidden=!!((active!=='all'&&cat!==active)||(q&&!b.textContent.toLowerCase().includes(q)));
+    });
+    const visible=[...document.querySelectorAll('#drawerBody [data-drawer-page]')].filter(b=>!b.hidden).length;
+    const out=byId('menuResults');if(out)out.innerHTML=(q||active!=='all'?'FILTERED DESTINATIONS':'ALL DESTINATIONS')+' <span>'+visible+' available</span>';
+  }
+  document.addEventListener('click',function(e){
+    const target=e.target instanceof Element?e.target:null;if(!target)return;
+    const auth=target.closest('[data-na-quick-auth]');
+    if(auth){e.preventDefault();e.stopImmediatePropagation();account(auth.dataset.naQuickAuth);return}
+    const action=target.closest('[data-quick-action]');
+    if(action){
+      e.preventDefault();e.stopImmediatePropagation();
+      const key=action.dataset.quickAction;
+      if(key==='quiz-en'||key==='quiz-ku'){
+        if(key==='quiz-ku'&&typeof kurdishMode!=='undefined'&&!kurdishMode)safeCall(()=>setLanguage());
+        if(key==='quiz-en'&&typeof kurdishMode!=='undefined'&&kurdishMode)safeCall(()=>setLanguage());
+        closeMenu();module('quizstudio');record(key==='quiz-ku'?'Opened Kurdish quiz':'Opened English quiz');return;
+      }
+      if(key==='events'){closeMenu();module('notifications');record('Opened student activity center');return}
+      const page={'explore-network':'internetmap','start-learning':'lessons','command-lab':'terminal'}[key];
+      if(page){closeMenu();module(page);return}
+    }
+    const drawerItem=target.closest('#drawerBody [data-drawer-page]');
+    if(drawerItem){e.preventDefault();e.stopImmediatePropagation();const page=drawerItem.dataset.drawerPage;closeMenu();if(page==='dashboard'){openMenu();return}if(typeof showDrawerPage==='function')safeCall(()=>showDrawerPage(page));else module(page);return}
+    const filter=target.closest('#drawerBody [data-menu-filter]');
+    if(filter){e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('#drawerBody [data-menu-filter]').forEach(x=>x.classList.toggle('active',x===filter));applyMenuFilter();return}
+    if(target.closest('#openMenu')){e.preventDefault();e.stopImmediatePropagation();openMenu();return}
+    if(target.closest('#closeMenu')||target.closest('#drawerBack')){e.preventDefault();e.stopImmediatePropagation();closeMenu();return}
+    if(target.closest('#topNotifications')){e.preventDefault();e.stopImmediatePropagation();module('notifications');return}
+  },true);
+  document.addEventListener('input',function(e){if(e.target&&e.target.id==='menuSearch')applyMenuFilter()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenu()}});
+  document.addEventListener('DOMContentLoaded',function(){applyMenuFilter()});
+  if(document.readyState!=='loading')applyMenuFilter();
+})();
+</script>
+
 </body>
 </html>
