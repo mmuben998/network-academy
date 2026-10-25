@@ -1425,5 +1425,109 @@ body{background:radial-gradient(ellipse at 8% 0%,#512b7b55,transparent 34%),radi
  input.addEventListener('input',filter);
 })();
 </script>
+
+<style id="na-owner-student-visibility">
+/* Owner-only controls: hidden for students and guests by default. */
+.na-role-hidden{display:none!important}
+</style>
+<script id="na-owner-student-visibility">
+(function(){
+'use strict';
+const ownerOnlyPages=new Set(['owneradmin','toolkit','cybercenter','architecture','ownerdiagnostics']);
+const runtimeErrors=[];
+window.addEventListener('error',e=>{runtimeErrors.push({type:'JavaScript error',message:String(e.message||'Unknown error'),source:e.filename||'',line:e.lineno||0});if(runtimeErrors.length>30)runtimeErrors.shift()});
+window.addEventListener('unhandledrejection',e=>{runtimeErrors.push({type:'Unhandled promise rejection',message:String(e.reason?.message||e.reason||'Unknown rejection'),source:'',line:0});if(runtimeErrors.length>30)runtimeErrors.shift()});
+function readJSON(key){try{return JSON.parse(localStorage.getItem(key)||'null')}catch{return null}}
+function role(){
+ const primary=readJSON('na_current_user');
+ if(primary&&primary.role)return String(primary.role).toLowerCase();
+ const secondary=readJSON('na_session_local_v1');
+ if(secondary&&secondary.role)return String(secondary.role).toLowerCase();
+ return 'guest';
+}
+function isOwner(){return role()==='owner'}
+function restricted(page){return ownerOnlyPages.has(page)}
+function notificationsHTML(){
+ const quizList=readJSON('na_teacher_quizzes_v1')||[];
+ const quizCount=Array.isArray(quizList)?quizList.length:0;
+ return '<div class="academy-page"><div class="academy-kicker">STUDENT CENTER / NOTIFICATIONS</div><h2>Notifications</h2><p>Basic academy updates for learners. These are demo notifications stored or displayed by this browser; this static GitHub Pages site cannot push messages between different students or devices.</p>'+
+ '<div class="academy-block"><h3>Welcome to Network Academy</h3><p>Your learning space is ready. Open Quiz Studio to take available quizzes and check your results.</p><span class="tag good">ACADEMY UPDATE</span></div>'+
+ '<div class="academy-block"><h3>Quiz Studio</h3><p>'+(quizCount?('There '+(quizCount===1?'is':'are')+' '+quizCount+' quiz'+(quizCount===1?'':'zes')+' saved in this browser. Open Quiz Studio to see what is available.'):'Open Quiz Studio to check for quizzes. No quizzes are saved in this browser yet.')+'</p><button class="btn primary" type="button" data-na-notification-action="quizzes">Open Quiz Studio</button></div>'+
+ '<div class="academy-block"><h3>Learning reminder</h3><p>Study one concept at a time, try a quiz, and review explanations for answers you missed.</p><span class="tag">LEARNING TIP</span></div>'+
+ '<div class="academy-block"><h3>Account safety</h3><p>Never share your password. Your current account system is a local demo, not a secure shared account service.</p><span class="tag">SAFETY NOTICE</span></div></div>';
+}
+pageText.notifications=notificationsHTML();
+moduleMeta.notifications={title:'Notifications',sub:'Basic academy updates and quiz reminders',image:'',alt:'Network Academy notifications'};
+pageText.ownerdiagnostics='<div class="academy-page"><div class="academy-kicker">OWNER CONSOLE / LOCAL DIAGNOSTICS</div><h2>Bug Finder & Site Diagnostics</h2><p>Checks a few important page elements, browser storage, and JavaScript errors observed during this page session. This is a local diagnostic helper, not a complete source-code audit or an external security scan.</p><div class="academy-block"><h3>Local checks</h3><p>Run checks against the current page. Nothing is sent to an external server.</p><button class="btn primary" id="naRunOwnerChecks" type="button">Run checks</button><div class="result" id="naOwnerCheckSummary" aria-live="polite">Ready to run local checks.</div><div id="naOwnerCheckList"></div></div><div class="academy-block"><h3>Session runtime errors</h3><p>Only errors observed after this helper loads are listed here.</p><div id="naOwnerRuntimeErrors" class="result">No checks run yet.</div></div><div class="academy-callout">Owner-only interface visibility is a convenience, not real security. Because this is a static website, real permissions require server-side authentication and authorization.</div></div>';
+moduleMeta.ownerdiagnostics={title:'Bug Finder & Site Diagnostics',sub:'Owner-only local page checks',image:'',alt:'Local diagnostics'};
+function addMenuItem(body,page,label,description,icon,afterPage){
+ if(!body||body.querySelector('[data-drawer-page="'+page+'"]'))return;
+ const b=document.createElement('button');b.type='button';b.className='menuitem';b.dataset.drawerPage=page;b.dataset.menuCategory=page==='notifications'?'project':'labs';
+ b.innerHTML='<span>'+icon+'</span><span>'+label+'<small>'+description+'</small></span>';
+ const anchor=afterPage?body.querySelector('[data-drawer-page="'+afterPage+'"]'):null;
+ if(anchor&&anchor.parentElement===body)anchor.insertAdjacentElement('afterend',b);else body.appendChild(b);
+ b.addEventListener('click',()=>{if(restricted(page)&&!isOwner()){openModule('notifications');return}if(typeof closeDrawer==='function')closeDrawer();openModule(page)});
+}
+function applyVisibility(){
+ const body=document.getElementById('drawerBody');
+ if(body){
+  addMenuItem(body,'notifications','Notifications','Basic updates and quiz reminders','♧','dashboard');
+  if(isOwner())addMenuItem(body,'ownerdiagnostics','Bug Finder & Diagnostics','Owner-only local checks','⌕','owneradmin');
+  body.querySelectorAll('[data-drawer-page]').forEach(b=>{
+   const p=b.dataset.drawerPage;
+   const hide=restricted(p)&&!isOwner();
+   b.classList.toggle('na-role-hidden',hide);
+   b.setAttribute('aria-hidden',hide?'true':'false');
+   if(hide)b.setAttribute('tabindex','-1');else b.removeAttribute('tabindex');
+  });
+ }
+}
+const originalOpenModule=window.openModule;
+if(typeof originalOpenModule==='function'){
+ window.openModule=function(page){
+  if(restricted(page)&&!isOwner()){
+   if(typeof closeDrawer==='function')closeDrawer();
+   return originalOpenModule('notifications');
+  }
+  return originalOpenModule(page);
+ };
+}
+document.addEventListener('click',e=>{
+ const item=e.target.closest('[data-drawer-page]');
+ if(item&&restricted(item.dataset.drawerPage)&&!isOwner()){
+  e.preventDefault();e.stopImmediatePropagation();
+  if(typeof closeDrawer==='function')closeDrawer();
+  if(typeof originalOpenModule==='function')originalOpenModule('notifications');
+  return;
+ }
+ if(e.target.closest('[data-na-notification-action="quizzes"]')){
+  if(typeof closeDrawer==='function')closeDrawer();
+  openModule('quizstudio');
+  return;
+ }
+ if(e.target.closest('#naRunOwnerChecks')){
+  if(!isOwner()){const out=document.getElementById('naOwnerCheckSummary');if(out)out.textContent='Owner sign-in is required.';return}
+  const checks=[
+   ['Module window',!!document.getElementById('moduleOverlay')],
+   ['Module content area',!!document.getElementById('moduleContent')],
+   ['Quick menu',!!document.getElementById('drawerBody')],
+   ['Quiz Studio menu entry',!!document.querySelector('[data-drawer-page="quizstudio"]')],
+   ['Account Center menu entry',!!document.querySelector('[data-drawer-page="accountcenter"]')],
+   ['Browser storage',(()=>{try{const k='na_diag_test';localStorage.setItem(k,'1');localStorage.removeItem(k);return true}catch{return false}})()]
+  ];
+  const list=document.getElementById('naOwnerCheckList'),summary=document.getElementById('naOwnerCheckSummary'),errors=document.getElementById('naOwnerRuntimeErrors');
+  const passed=checks.filter(x=>x[1]).length;
+  if(summary)summary.textContent=passed+'/'+checks.length+' local checks passed. Review any failed items below.';
+  if(list)list.innerHTML=checks.map(x=>'<div class="result '+(x[1]?'':'warn')+'">'+(x[1]?'✓ ':'⚠ ')+x[0]+': '+(x[1]?'OK':'Not detected or unavailable')+'</div>').join('');
+  if(errors)errors.textContent=runtimeErrors.length?runtimeErrors.map((x,i)=>(i+1)+'. '+x.type+': '+x.message+(x.source?' ('+x.source+':'+x.line+')':'')).join('\n'):'No JavaScript errors have been recorded during this session.';
+ }
+});
+const body=document.getElementById('drawerBody');
+if(body)new MutationObserver(applyVisibility).observe(body,{childList:true,subtree:true});
+window.addEventListener('storage',applyVisibility);
+applyVisibility();
+})();
+</script>
+
 </body>
 </html>
