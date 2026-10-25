@@ -1529,5 +1529,36 @@ applyVisibility();
 })();
 </script>
 
+<style id="na-quickmenu-mobile-polish">
+/* Account-first quick menu with a persistent read-only profile card. */
+.quick-auth-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 13px}
+.menu-auth-btn{min-width:0;display:flex;align-items:center;gap:9px;padding:12px 10px;border:1px solid #29465b;border-radius:13px;background:linear-gradient(145deg,#102638,#0c1a2a);color:#e8f7ff;text-align:left;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.menu-auth-btn:hover{transform:translateY(-1px);border-color:#59d8c6;background:linear-gradient(145deg,#123c46,#102237)}
+.menu-auth-primary{border-color:#26796e;background:linear-gradient(145deg,#174c4b,#102b3c)}
+.menu-auth-icon{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:9px;background:#57e4ce18;color:#72f4df;font-size:18px}
+.menu-auth-btn>span:last-child{min-width:0;font-size:12px;font-weight:750}.menu-auth-btn small{display:block;margin-top:4px;color:#9db6c9;font-size:9px;font-weight:450;line-height:1.35}
+.quick-profile-card{display:flex;align-items:center;gap:12px;margin:0 0 14px;padding:13px;border:1px solid #28475a;border-radius:15px;background:radial-gradient(ellipse at 0% 0%,#1b4a5038,transparent 70%),linear-gradient(140deg,#102235,#0b1726);pointer-events:none;user-select:text}
+.quick-profile-card .quick-avatar{flex:0 0 42px;width:42px;height:42px;display:grid;place-items:center;border:1px solid #367b79;border-radius:13px;background:#143b43;color:#82f4e2;font-size:19px}
+.quick-profile-copy{min-width:0;display:flex;flex-direction:column;gap:4px}.quick-profile-copy strong{color:#e7fbff;font-size:11px;letter-spacing:.07em}.quick-profile-copy span{color:#9edbd6;font-size:11px;overflow-wrap:anywhere}.quick-profile-copy small{color:#829bb0;font-size:9px;line-height:1.4}
+.drawerbody{padding:14px;overscroll-behavior:contain;scrollbar-width:thin}.menuitem{min-height:47px;line-height:1.35}.menuitem span:last-child{min-width:0;overflow-wrap:anywhere}.menuitem small{line-height:1.45}.menu-results{margin-top:8px}
+@media(max-width:650px){.topbar{align-items:center;gap:8px;padding:10px 12px;min-height:66px}.brand{min-width:0;gap:8px}.brand strong{font-size:11px;letter-spacing:.04em}.brand small{font-size:8px}.topright{display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap;min-width:0}#topCreateProfile,#topLogin{display:none}#topQuiz{padding:9px 10px;font-size:11px}#openMenu{width:39px;height:39px;flex:0 0 39px}.drawer{width:min(420px,100vw);max-width:100vw;border-left:0}.drawerhead{padding:15px 16px}.drawerbody{padding:12px 13px calc(22px + env(safe-area-inset-bottom))}.quick-auth-actions{gap:8px}.menu-auth-btn{padding:11px 8px;gap:7px}.menu-auth-icon{width:27px;height:27px;flex-basis:27px}.quick-profile-card{padding:11px}.menu-search-wrap input{min-width:0;width:100%}.menu-filters{display:flex;flex-wrap:wrap;gap:6px}.menu-filter{flex:1 1 auto;min-width:58px;padding:8px 6px}.menuitem{padding:12px 10px;margin:3px 0}.drawerfoot{padding:12px 14px;font-size:9px}.module-window{width:100%;max-width:100%;max-height:100dvh;border-radius:0}.module-topbar{padding:12px}.module-content{padding:14px!important}.inputrow{display:grid!important;grid-template-columns:minmax(0,1fr)!important}.inputrow>*{min-width:0!important;width:100%!important}.na-extra-grid{grid-template-columns:minmax(0,1fr)!important}.na-actions{display:grid!important;grid-template-columns:minmax(0,1fr)!important}.na-actions .btn,.inputrow .btn{width:100%;min-width:0}}
+@media(max-width:380px){.brand .mark{display:none}.brand strong{font-size:10px}.topright{gap:4px}#topQuiz{font-size:10px;padding:8px}.quick-auth-actions{grid-template-columns:1fr}.menu-auth-btn{min-height:55px}.menu-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.menu-auth-btn,.drawer,.drawerback{transition:none!important}}
+</style>
+<script id="na-quickmenu-account-fixes">
+(function(){
+'use strict';
+const $=s=>document.querySelector(s);
+function read(key){try{return JSON.parse(localStorage.getItem(key)||'null')}catch{return null}}
+function currentUser(){const u=read('na_current_user');if(u&&u.username)return {name:u.username,role:String(u.role||'student').toLowerCase(),createdAt:u.createdAt||''};const session=read('na_session_local_v1');if(session&&session.name)return {name:session.name,role:String(session.role||'student').toLowerCase(),createdAt:session.createdAt||''};return null}
+function renderProfile(){const card=$('#naQuickProfile'),name=$('#naQuickProfileName'),role=$('#naQuickProfileRole'),status=$('#naQuickProfileStatus'),avatar=$('#naQuickAvatar');if(!card||!name||!role||!status)return;const u=currentUser();if(!u){name.textContent='GUEST PROFILE';role.textContent='Not signed in';status.textContent='Create an account to start learning';if(avatar)avatar.textContent='⌘';return}const labels={owner:'Platform Owner',admin:'Administrator',teacher:'Teacher',student:'Student'};name.textContent=u.name;role.textContent=labels[u.role]||'Student';status.textContent='Local browser profile · '+(u.createdAt?'Account active':'Session active');if(avatar)avatar.textContent=u.role==='owner'?'♛':u.role==='teacher'?'✎':u.role==='admin'?'⚙':'⌘'}
+function openAccount(mode){if(typeof window.openModule==='function')window.openModule('accountcenter');setTimeout(()=>{const target=mode==='create'?$('#naSignupUser'):$('#naLoginUser');if(target){target.focus({preventScroll:false});target.scrollIntoView({block:'center',behavior:'smooth'})}else{const fallback=mode==='create'?$('#naSignupForm'):$('#naLoginForm');if(fallback)fallback.scrollIntoView({block:'center',behavior:'smooth'})}},180)}
+document.addEventListener('click',e=>{const btn=e.target.closest('[data-na-quick-auth]');if(btn){e.preventDefault();e.stopPropagation();openAccount(btn.dataset.naQuickAuth);return}});
+document.addEventListener('submit',e=>{if(['naLoginForm','naSignupForm','naStaffForm'].includes(e.target.id)){setTimeout(renderProfile,80);setTimeout(renderProfile,350)}});
+document.addEventListener('click',e=>{if(e.target.closest('#naLogout')||e.target.closest('#naLogoutBtn'))setTimeout(renderProfile,60)});
+window.addEventListener('storage',renderProfile);document.addEventListener('DOMContentLoaded',renderProfile);
+const observer=new MutationObserver(renderProfile);observer.observe(document.documentElement,{childList:true,subtree:true});renderProfile();
+})();
+</script>
 </body>
 </html>
