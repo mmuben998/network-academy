@@ -1788,7 +1788,7 @@ const pairs=[
 const original=new WeakMap();
 function translateValue(value,toKu){let out=value;for(const [en,ku] of pairs){const from=toKu?en:ku,to=toKu?ku:en;if(out===from)out=to;else if(from.length>5&&out.includes(from))out=out.split(from).join(to)}return out}
 function translateDom(){
- const toKu=!!window.kurdishMode;
+ const toKu=!!kurdishMode;
  document.querySelectorAll('[data-na-lang-label]').forEach(el=>{el.innerHTML=toKu?'گۆڕینی زمان · کوردی / EN<small>گۆڕین لە نێوان کوردی و ئینگلیزی</small>':'Change language · EN / کوردی<small>Switch English and Central Kurdish</small>'});
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
  let node;while((node=walker.nextNode())){if(!node.nodeValue.trim())continue;const parent=node.parentElement;if(!parent||parent.closest('script,style,textarea,code,pre,input,option,[data-na-lang-label]'))continue;if(!original.has(node))original.set(node,node.nodeValue);const raw=original.get(node);const translated=translateValue(raw.trim(),toKu);if(translated!==raw.trim()){const leading=raw.match(/^\s*/)?.[0]||'',trailing=raw.match(/\s*$/)?.[0]||'';node.nodeValue=leading+translated+trailing}else if(!toKu)node.nodeValue=raw;}
@@ -1797,10 +1797,11 @@ function translateDom(){
 }
 const oldSetLanguage=window.setLanguage;
 if(typeof oldSetLanguage==='function'){
- window.setLanguage=function(){oldSetLanguage();translateDom();document.querySelectorAll('[data-na-language-toggle]').forEach(b=>b.setAttribute('aria-pressed',String(!!window.kurdishMode)))};
+ window.setLanguage=function(){oldSetLanguage();translateDom();document.querySelectorAll('[data-na-language-toggle]').forEach(b=>b.setAttribute('aria-pressed',String(!!kurdishMode)))};
 }
-document.addEventListener('click',function(e){const b=e.target.closest&&e.target.closest('[data-na-language-toggle]');if(!b)return;e.preventDefault();if(typeof window.setLanguage==='function')window.setLanguage();else{window.kurdishMode=!window.kurdishMode;translateDom()}},true);
-const observer=new MutationObserver(()=>{if(window.kurdishMode)translateDom()});
+document.addEventListener('click',function(e){const b=e.target.closest&&e.target.closest('[data-na-language-toggle]');if(!b)return;e.preventDefault();if(typeof window.setLanguage==='function')window.setLanguage();else{kurdishMode=!kurdishMode;translateDom()}},true);
+const mainToggle=document.getElementById('languageToggle');if(mainToggle)mainToggle.addEventListener('click',()=>setTimeout(translateDom,0));
+const observer=new MutationObserver(()=>{if(kurdishMode)translateDom()});
 observer.observe(document.body,{childList:true,subtree:true});
 document.addEventListener('DOMContentLoaded',translateDom);
 translateDom();
