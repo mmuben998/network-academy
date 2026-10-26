@@ -1183,7 +1183,25 @@ function showDrawerPage(page){if(page==='dashboard'){$('#drawerTitle').textConte
 $('#moduleContent').addEventListener('submit',e=>{if(e.target.id!=='studentDemoForm')return;e.preventDefault();const name=$('#studentDemoName').value.trim();const code=$('#studentDemoCode').value.trim();if(!name){$('#studentDemoStatus').textContent='Enter a display name first.';return}const profile={name,inviteCode:code,createdAt:new Date().toISOString(),mode:'local-demo'};try{localStorage.setItem('naStudentDemoProfile',JSON.stringify(profile));$('#studentDemoStatus').textContent=`Demo profile created for ${name} in this browser only. No secure account was created.`}catch(err){$('#studentDemoStatus').textContent='Browser storage is unavailable. The demo profile was not saved.'}});
 $('#moduleContent').addEventListener('click',e=>{if(e.target.id==='studentDemoClear'){try{localStorage.removeItem('naStudentDemoProfile')}catch(err){}const out=$('#studentDemoStatus');if(out)out.textContent='Local demo profile cleared from this browser.';const form=$('#studentDemoForm');if(form)form.reset()}if(e.target.matches('[data-drawer-page="feedback"]')){openDrawer();}});
 bindDrawerButtons();return}openModule(page)}
-window.addEventListener('na-open-account',function(e){const mode=e.detail&&e.detail.mode;openModule('accountcenter');closeDrawer();window.setTimeout(function(){const id=mode==='signup'?'naSignupUser':'naLoginUser';const field=document.getElementById(id);if(field){field.focus({preventScroll:true});field.scrollIntoView({behavior:'smooth',block:'center'});}else{console.error('Network Academy: account form did not render:',id);}},180);});
+function naHandleAccountOpen(mode){
+ if(mode!=='login'&&mode!=='signup')return;
+ closeDrawer();
+ openModule('accountcenter');
+ window.setTimeout(function(){
+  const id=mode==='signup'?'naSignupUser':'naLoginUser';
+  const field=document.getElementById(id);
+  if(field){field.focus({preventScroll:true});field.scrollIntoView({behavior:'smooth',block:'center'});}
+  else{console.error('Network Academy: account form did not render:',id);}
+ },250);
+}
+document.addEventListener('click',function(e){
+ const el=e.target&&e.target.closest?e.target.closest('[data-dashboard-account], [data-account-focus], [data-account-open]'):null;
+ if(!el||el.closest('#moduleContent form'))return;
+ const mode=el.getAttribute('data-dashboard-account')||el.getAttribute('data-account-focus')||el.getAttribute('data-account-open');
+ if(mode!=='login'&&mode!=='signup')return;
+ e.preventDefault();e.stopPropagation();if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+ naHandleAccountOpen(mode);
+},true);
 $('#closeModule').onclick=closeModule;$('#moduleBackToMenu').onclick=()=>{closeModule();openDrawer()};moduleOverlay.addEventListener('click',e=>{if(e.target===moduleOverlay)closeModule()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModule()});
 $$('[data-module-open]').forEach(b=>b.addEventListener('click',()=>openModule(b.dataset.moduleOpen)));
 buildTrackLaunchCards();
@@ -1412,41 +1430,5 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 .dashboard-account-actions>div:first-child{display:flex;flex-direction:column;gap:4px}.dashboard-account-actions>div:first-child strong{font-size:11px;letter-spacing:.14em;color:#7fffe8}.dashboard-account-actions>div:first-child span{font-size:13px;color:#b9c9d8}.dashboard-account-buttons{display:flex;gap:8px;flex-wrap:wrap}.dashboard-account-buttons button{min-height:42px;cursor:pointer}
 .quick-auth-item{cursor:pointer}
 </style>
-<script id="na-account-navigation-fix-v2">
-/* Account navigation: explicitly route both dashboard and Quick Menu actions. */
-(function(){
-  function openAccount(mode){
-    try {
-      window.dispatchEvent(new CustomEvent('na-open-account',{detail:{mode:mode}}));
-      window.setTimeout(function(){
-        var id = mode === 'signup' ? 'naSignupUser' : 'naLoginUser';
-        var field = document.getElementById(id);
-        if (field) {
-          field.focus({preventScroll:true});
-          field.scrollIntoView({behavior:'smooth', block:'center'});
-        } else {
-          console.error('Network Academy: account form did not render:', id);
-        }
-      }, 350);
-    } catch (err) { console.error('Network Academy account navigation failed:', err); }
-  }
-  document.addEventListener('click', function(e){
-    var el = e.target && e.target.closest ? e.target.closest('[data-account-focus], [data-account-open]') : null;
-    if (!el || el.closest('#moduleContent form')) return;
-    var mode = el.getAttribute('data-account-focus') || el.getAttribute('data-account-open');
-    if (mode !== 'signup' && mode !== 'login') return;
-    e.preventDefault(); e.stopPropagation();
-    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-    openAccount(mode);
-  }, true);
-  document.addEventListener('click', function(e){
-    var el = e.target && e.target.closest ? e.target.closest('[data-dashboard-account]') : null;
-    if (!el) return;
-    e.preventDefault();
-    openAccount(el.getAttribute('data-dashboard-account'));
-  }, true);
-})();
-</script>
-
 </body>
 </html>
