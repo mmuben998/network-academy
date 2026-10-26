@@ -1183,6 +1183,7 @@ function showDrawerPage(page){if(page==='dashboard'){$('#drawerTitle').textConte
 $('#moduleContent').addEventListener('submit',e=>{if(e.target.id!=='studentDemoForm')return;e.preventDefault();const name=$('#studentDemoName').value.trim();const code=$('#studentDemoCode').value.trim();if(!name){$('#studentDemoStatus').textContent='Enter a display name first.';return}const profile={name,inviteCode:code,createdAt:new Date().toISOString(),mode:'local-demo'};try{localStorage.setItem('naStudentDemoProfile',JSON.stringify(profile));$('#studentDemoStatus').textContent=`Demo profile created for ${name} in this browser only. No secure account was created.`}catch(err){$('#studentDemoStatus').textContent='Browser storage is unavailable. The demo profile was not saved.'}});
 $('#moduleContent').addEventListener('click',e=>{if(e.target.id==='studentDemoClear'){try{localStorage.removeItem('naStudentDemoProfile')}catch(err){}const out=$('#studentDemoStatus');if(out)out.textContent='Local demo profile cleared from this browser.';const form=$('#studentDemoForm');if(form)form.reset()}if(e.target.matches('[data-drawer-page="feedback"]')){openDrawer();}});
 bindDrawerButtons();return}openModule(page)}
+window.addEventListener('na-open-account',function(e){const mode=e.detail&&e.detail.mode;openModule('accountcenter');closeDrawer();window.setTimeout(function(){const id=mode==='signup'?'naSignupUser':'naLoginUser';const field=document.getElementById(id);if(field){field.focus({preventScroll:true});field.scrollIntoView({behavior:'smooth',block:'center'});}else{console.error('Network Academy: account form did not render:',id);}},180);});
 $('#closeModule').onclick=closeModule;$('#moduleBackToMenu').onclick=()=>{closeModule();openDrawer()};moduleOverlay.addEventListener('click',e=>{if(e.target===moduleOverlay)closeModule()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModule()});
 $$('[data-module-open]').forEach(b=>b.addEventListener('click',()=>openModule(b.dataset.moduleOpen)));
 buildTrackLaunchCards();
@@ -1416,9 +1417,7 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 (function(){
   function openAccount(mode){
     try {
-      if (typeof openModule === 'function') openModule('accountcenter');
-      else { console.error('Network Academy: account module navigation is unavailable.'); return; }
-      if (typeof closeDrawer === 'function') closeDrawer();
+      window.dispatchEvent(new CustomEvent('na-open-account',{detail:{mode:mode}}));
       window.setTimeout(function(){
         var id = mode === 'signup' ? 'naSignupUser' : 'naLoginUser';
         var field = document.getElementById(id);
