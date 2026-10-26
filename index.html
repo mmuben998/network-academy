@@ -1116,6 +1116,7 @@ function naUser(){return naRead('na_current_user',null)}
 function naStatus(id,msg){const e=document.getElementById(id);if(e)e.textContent=msg}
 async function naHash(v){if(globalThis.crypto?.subtle){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}/* Local-file fallback for this explicitly non-secure demo only. */let a=0x811c9dc5,b=0x9e3779b9;for(let i=0;i<v.length;i++){const c=v.charCodeAt(i);a=Math.imul(a^c,0x01000193);b=Math.imul(b+c,0x85ebca6b)}return 'local-demo-'+(a>>>0).toString(16)+(b>>>0).toString(16)}
 function initAccountCenter(){
+ const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const signup=document.getElementById('naSignupForm'),login=document.getElementById('naLoginForm'),logout=document.getElementById('naLogout'),staffForm=document.getElementById('naStaffForm');
  const getAccounts=()=>naRead('na_accounts',[]).filter(a=>a&&typeof a==='object'&&typeof a.username==='string');
  let accounts=getAccounts();
@@ -1215,19 +1216,19 @@ $('#moduleContent').addEventListener('click',e=>{if(e.target.id==='studentDemoCl
 bindDrawerButtons();return}openModule(page)}
 function naHandleAccountOpen(mode){
  if(mode!=='login'&&mode!=='signup')return;
- try{closeDrawer();openModule('accountcenter');}
- catch(err){
-  console.error('Network Academy account navigation failed; opening fallback:',err);
+ let opened=false;
+ try{closeDrawer();openModule('accountcenter');opened=true;}
+ catch(err){console.error('Network Academy account navigation failed; using direct page render:',err);}
+ if(!opened){
   try{
    const html=pageText&&pageText.accountcenter;
    if(!html)throw new Error('Account page markup is unavailable');
    moduleContent.innerHTML=html;
-   initAccountCenter();
    moduleOverlay.classList.add('open');
    moduleOverlay.setAttribute('aria-hidden','false');
    document.body.style.overflow='hidden';
-   closeDrawer();
-  }catch(fallbackErr){console.error('Network Academy account fallback failed:',fallbackErr);alert('Account page could not open. Refresh this page and try again.');return;}
+   try{initAccountCenter();}catch(initErr){console.error('Account form initialization failed:',initErr);const status=document.getElementById('naLoginStatus');if(status)status.textContent='The account form opened, but setup failed. Refresh and try again.';}
+  }catch(fallbackErr){console.error('Network Academy account fallback failed:',fallbackErr);return;}
  }
  window.setTimeout(function(){
   const id=mode==='signup'?'naSignupUser':'naLoginUser';
