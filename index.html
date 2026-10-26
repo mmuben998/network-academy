@@ -237,82 +237,25 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 @media(max-width:480px){.drawer{width:100vw;border-left:0}.drawerbody{padding:12px 13px 20px}.menu-hero{padding:13px}.menu-filter{font-size:9px}.menuitem{min-height:52px}}
 @media(prefers-reduced-motion:reduce){.menuitem,.menu-filter,.menu-search-wrap{transition:none}}
 
-/* Language access stays visible on both dashboard and the first row of Quick Menu. */
-.dashboard-language-toggle{border-color:#2d5365;background:linear-gradient(120deg,#102b39,#0b1a2a);white-space:nowrap;font-weight:800;min-height:42px}
-html[dir="rtl"] .hero-actions{direction:rtl;justify-content:flex-start}
-@media(max-width:850px){.dashboard-language-toggle{display:inline-flex!important;align-items:center;justify-content:center;min-height:44px;flex:1 1 100%;width:100%;margin-top:2px}.hero-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}.hero-actions .btn{width:100%;min-width:0}.drawerbody{padding-bottom:max(18px,env(safe-area-inset-bottom))}}
-/* Mobile polish pass: responsive cards, readable controls, safe drawers and RTL. */
-.language-menu-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 13px;margin:0 0 12px;border:1px solid #2d5365;border-radius:13px;background:linear-gradient(120deg,#102b39,#0b1a2a)}
-.language-menu-label{font-size:12px;font-weight:800;letter-spacing:.04em;color:#b9d8e4}
-.language-menu-row .lang-toggle{flex:0 0 auto;min-height:42px;padding:9px 13px;border-radius:10px;font-weight:800;white-space:nowrap}
-html[dir="rtl"] .language-menu-row{direction:rtl}
-html[dir="rtl"] .drawerhead,html[dir="rtl"] .drawerbody{ text-align:right }
-html[dir="rtl"] .menuitem{direction:rtl;text-align:right}
-html[dir="rtl"] .menuitem>span:nth-child(2){text-align:right}
-img,svg,canvas,video{max-width:100%}
-button,input,select,textarea{font:inherit;max-width:100%}
-button{touch-action:manipulation}
-input,select,textarea{min-width:0}
-.card,.stat,.feature,.photo-card,.module-window,.drawer,.academy-page,.na-extra-panel{min-width:0;overflow-wrap:anywhere}
-pre,code,.code,.mono,[data-code],.ip-value,.domain-value{overflow-wrap:anywhere;word-break:break-word}
-@media(max-width:850px){
-  html{ -webkit-text-size-adjust:100%;text-size-adjust:100% }
-  body{overflow-x:hidden}
-  .topbar{height:auto;min-height:62px;padding:10px 12px;gap:8px;flex-wrap:wrap}
-  .topbar>div,.topbar .top-actions,.topbar .actions{min-width:0;max-width:100%;gap:7px;flex-wrap:wrap}
-  .topbar strong{font-size:13px;line-height:1.25}
-  .topbar .lang-toggle{display:none!important}
-  .main{width:100%;max-width:100%;padding:16px 12px 28px;overflow:hidden}
-  .hero{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;padding:18px 15px}
-  .hero h1{font-size:clamp(26px,7vw,38px);line-height:1.12;overflow-wrap:anywhere}
-  .hero p{font-size:14px;line-height:1.65}
-  .hero-visual{width:100%;max-width:340px;margin:0 auto;transform:scale(.94);transform-origin:center}
-  .grid{grid-template-columns:minmax(0,1fr);gap:12px}
-  .grid>[class*="span-"]{grid-column:1/-1;min-width:0}
-  .card{padding:14px;border-radius:15px}
-  .statrow{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-  .stat{padding:12px;min-width:0}
-  .stat strong{font-size:clamp(15px,4vw,21px);overflow-wrap:anywhere}
-  .photo-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
-  .photo-card{min-height:160px}
-  .photo-card .photo-copy{left:11px;right:11px;bottom:11px}
-  .photo-card .photo-copy strong{font-size:14px;line-height:1.25}
-  .photo-card .photo-copy span{font-size:11px;line-height:1.4}
-  .drawer{width:min(430px,100vw);max-width:100vw;border-left:0;border-radius:0}
-  .drawerhead{padding:14px 15px;gap:10px}
-  .drawerbody{padding:12px;overflow-x:hidden;overscroll-behavior:contain;padding-bottom:max(18px,env(safe-area-inset-bottom))}
-  .menuitem{width:100%;min-height:54px;padding:12px;gap:10px;align-items:flex-start}
-  .menuitem>span:nth-child(2){min-width:0;overflow-wrap:anywhere;line-height:1.4}
-  .menuitem small{display:block;line-height:1.45;margin-top:3px}
-  .module-overlay{padding:0;align-items:stretch}
-  .module-window{width:100%;height:100dvh;max-height:100dvh;border-radius:0;border-left:0;border-right:0}
-  .module-topbar{padding:10px 12px;gap:8px;flex-wrap:wrap}
-  .module-topbar .module-actions{flex-wrap:wrap}
-  .module-body,.module-content,.featurehub{min-width:0;max-width:100%;overflow-x:hidden}
-  .lesson-grid,.security-grid,.feature-grid,.featurehub-grid{grid-template-columns:minmax(0,1fr)!important}
-  .featurehub-head{display:block}
-  .featurehub-head>*+*{margin-top:12px}
-  .na-extra-grid{grid-template-columns:minmax(0,1fr)!important}
-  .na-extra-panel{padding:13px!important}
-  .na-extra-panel input,.na-extra-panel select,.na-extra-panel textarea{width:100%;min-height:42px}
-  .btn,.iconbtn,.menuitem,.feature{min-height:42px}
-  .footer{padding:12px 8px;font-size:10px;line-height:1.5;overflow-wrap:anywhere}
-  table{display:block;max-width:100%;overflow-x:auto}
-}
-@media(max-width:420px){
-  .topbar{padding:9px 10px}
-  .main{padding:12px 9px 24px}
-  .hero{padding:15px 12px}
-  .hero-visual{transform:scale(.84);margin-top:-12px;margin-bottom:-12px}
-  .statrow{grid-template-columns:minmax(0,1fr)}
-  .photo-strip{grid-template-columns:minmax(0,1fr)}
-  .photo-card{min-height:150px}
-  .language-menu-row{align-items:stretch;flex-direction:column}
-  .language-menu-row .lang-toggle{width:100%}
-  .card h2,.card h3{overflow-wrap:anywhere}
-}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+/* NEXUS AI floating assistant — additive UI, independent from lesson/module code */
+#nexusAiLauncher{position:fixed;right:20px;bottom:20px;z-index:1400;display:flex;align-items:center;gap:10px;border:1px solid #4ee8d1;border-radius:999px;padding:11px 16px;background:linear-gradient(135deg,#103d48,#152b47 72%);color:#edfffd;box-shadow:0 10px 38px #0009,0 0 24px #45e9cf22;font-weight:800;letter-spacing:.03em;transition:transform .2s,border-color .2s}
+#nexusAiLauncher:hover{transform:translateY(-3px);border-color:#a1fff0}#nexusAiLauncher .nexus-ai-orb{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#c8fff7,#50e8cf 45%,#176b7b 100%);color:#05212a;box-shadow:0 0 18px #53e7c088}
+#nexusAiWidget{position:fixed;right:20px;bottom:84px;z-index:1401;width:min(410px,calc(100vw - 24px));height:min(620px,calc(100dvh - 120px));display:flex;flex-direction:column;border:1px solid #2c6472;border-radius:20px;overflow:hidden;background:radial-gradient(ellipse at 100% 0,#16354c 0,transparent 40%),#071320;box-shadow:0 25px 90px #000b,0 0 40px #53e7c01c;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(12px) scale(.985);transition:opacity .2s,transform .2s,visibility .2s}
+#nexusAiWidget.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0) scale(1)}
+.nexus-ai-head{display:flex;align-items:center;gap:11px;padding:15px;border-bottom:1px solid #203a50;background:#091725ed}.nexus-ai-logo{height:42px;width:42px;flex:0 0 42px;display:grid;place-items:center;border:1px solid #3e9c97;border-radius:13px;background:linear-gradient(135deg,#124b55,#172d4a);color:#72ffe7;font-size:20px;box-shadow:inset 0 0 18px #53e7c019}.nexus-ai-title{font-size:14px;font-weight:900;letter-spacing:.09em}.nexus-ai-subtitle{font-size:10px;color:#91aabd;margin-top:2px}.nexus-ai-status{display:inline-flex;align-items:center;gap:5px;font-size:9px;color:#80e9bf;margin-top:5px}.nexus-ai-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#72e6ad;box-shadow:0 0 9px #72e6ad}.nexus-ai-close{margin-left:auto;border:1px solid #29455b;background:#0d1d2c;color:#cfe1ef;border-radius:9px;width:34px;height:34px;font-size:20px}
+.nexus-ai-disclaimer{padding:9px 13px;border-bottom:1px solid #1b3348;background:#0a1928;color:#94abc0;font-size:10px;line-height:1.5}.nexus-ai-messages{flex:1;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:15px;scroll-behavior:smooth}.nexus-ai-welcome{padding:15px;border:1px solid #23465a;border-radius:15px;background:linear-gradient(145deg,#0d2534,#0a1827)}.nexus-ai-welcome h3{font-size:16px;margin:0 0 7px}.nexus-ai-welcome p{font-size:12px;color:#afc3d4;line-height:1.65;margin:0 0 12px}.nexus-ai-suggestions{display:flex;flex-wrap:wrap;gap:7px}.nexus-ai-suggestions button{border:1px solid #2b5365;border-radius:999px;background:#0c2231;color:#aeece5;padding:7px 10px;font-size:10px;text-align:left}.nexus-ai-message{max-width:92%;padding:11px 12px;border-radius:13px;font-size:12px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere}.nexus-ai-message.user{align-self:flex-end;border:1px solid #2b7f7a;background:#103a3a;color:#effffb;border-bottom-right-radius:4px}.nexus-ai-message.assistant{align-self:flex-start;border:1px solid #263e54;background:#0d1e2d;color:#d8e7f2;border-bottom-left-radius:4px}.nexus-ai-message.error{border-color:#7b4e40;background:#2a1b1a;color:#ffe0d0}.nexus-ai-typing{color:#80dfd2;font-size:11px;padding:2px 3px}.nexus-ai-composer{padding:12px;border-top:1px solid #203a50;background:#091725}.nexus-ai-form{display:flex;align-items:flex-end;gap:8px}.nexus-ai-form textarea{resize:none;min-height:44px;max-height:110px;flex:1;min-width:0;border:1px solid #29475d;border-radius:12px;background:#07111d;color:#e9f7ff;padding:11px;font:12px/1.5 inherit;outline:none}.nexus-ai-form textarea:focus{border-color:#53e7c0;box-shadow:0 0 0 2px #53e7c019}.nexus-ai-send{height:44px;width:46px;flex:0 0 46px;border:1px solid #3db9a6;border-radius:12px;background:linear-gradient(135deg,#2b9e91,#246a88);color:white;font-size:18px}.nexus-ai-send:disabled{opacity:.45;cursor:not-allowed}.nexus-ai-footnote{font-size:9px;color:#70899e;margin-top:8px;line-height:1.5}.nexus-ai-hidden{display:none!important}
+@media(max-width:560px){#nexusAiLauncher{right:12px;bottom:12px;padding:9px 12px;font-size:12px}#nexusAiWidget{right:8px;bottom:70px;width:calc(100vw - 16px);height:min(650px,calc(100dvh - 88px));border-radius:17px}.nexus-ai-head{padding:12px}.nexus-ai-messages{padding:12px}}
+@media(prefers-reduced-motion:reduce){#nexusAiLauncher,#nexusAiWidget,.nexus-ai-messages{transition:none;scroll-behavior:auto}}
 
+
+/* Quick menu learning hub + student activity */
+#topCreateProfile[hidden],#topLogin[hidden],#topQuiz[hidden]{display:none!important}
+.quick-study-actions{display:grid;grid-template-columns:1fr;gap:7px;margin:10px 0 12px;padding:10px;border:1px solid #6b74ff35;border-radius:15px;background:linear-gradient(135deg,#17122b99,#0b243399)}
+.quick-study-actions .menuitem{margin:0;border-color:#6b74ff38}
+.event-count{display:inline-flex;align-items:center;justify-content:center;min-width:19px;height:19px;padding:0 5px;border-radius:99px;background:linear-gradient(135deg,#ff4eab,#8b6bff);color:white;font-size:10px;box-shadow:0 0 14px #bd69ff66}
+#topNotifications{position:relative;border-color:#9a7dff55;background:linear-gradient(135deg,#201638,#10243a);white-space:nowrap}
+#topNotifications .event-count{margin-left:4px}
+@media(max-width:700px){#topNotifications{min-height:40px;padding:8px 10px;font-size:11px}.quick-study-actions{padding:8px}}
 </style>
 
 <style>
@@ -397,21 +340,43 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 @media(max-width:520px){.topbar .brand small{font-size:8px;letter-spacing:.04em}}
 </style>
 
-/* Quick-menu module imagery: compact cover and gallery proportions */
-<style id="nexus-compact-module-images">
-.module-cover{height:clamp(155px,22vh,205px)!important;min-height:155px!important;overflow:hidden}
-.module-cover img{width:100%;height:100%;object-fit:cover;object-position:center 45%}
-.module-gallery img{height:112px!important;max-height:112px}
-.expanded-gallery img{max-height:150px;object-fit:cover}
-@media(max-width:700px){
-  .module-cover{height:145px!important;min-height:145px!important}
-  .module-cover img{object-position:center 42%}
-  .module-gallery{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px}
-  .module-gallery img{height:92px!important;max-height:92px}
-  .expanded-gallery img{max-height:115px}
+<style id="network-academy-responsive-fix">
+/* Responsive pass: phones, tablets and laptop-sized screens */
+html{width:100%;overflow-x:clip}body{width:100%;overflow-x:clip}img,svg,canvas,video{max-width:100%}
+button,input,select,textarea{max-width:100%;touch-action:manipulation}
+.topbar{min-height:70px;height:auto;flex-wrap:wrap;padding:10px clamp(12px,3vw,32px);gap:10px}
+.topright{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;min-width:0}
+.main{width:min(100% - 32px,1440px);margin-inline:auto}
+.grid,.dashboard-grid,.hub-grid,.track-launch-grid,.expanded-gallery{min-width:0}
+.drawer{width:min(420px,92vw);max-width:100vw;height:100dvh;padding-bottom:env(safe-area-inset-bottom)}
+.drawerbody{overflow-y:auto;overscroll-behavior:contain;padding-bottom:20px}
+.module-overlay{padding:clamp(8px,2vw,24px)}
+.module-window,.module-shell,.module-panel{max-width:100%;min-width:0}
+.module-content{min-width:0;overflow-wrap:anywhere}
+.academy-page,.academy-block,.profilebox{min-width:0;max-width:100%}
+.inputrow{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px}
+.inputrow label{flex:1 1 190px;min-width:0!important}
+.inputrow input,.inputrow select,.inputrow textarea{width:100%!important;min-width:0;min-height:44px}
+.inputrow button,.btn,.iconbtn,.menuitem{min-height:42px}
+.hero{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(16px,3vw,40px)}
+.hero>*{min-width:0}.hero-visual{width:100%;min-width:0}
+pre,code,.table-wrap{max-width:100%;overflow-x:auto}
+@media(max-width:900px){.topbar{align-items:flex-start}.topright{flex:1 1 100%;justify-content:flex-start}.hero{display:grid;grid-template-columns:minmax(0,1fr)}.hero-visual{max-width:520px;margin-inline:auto}.main{width:min(100% - 24px,900px)}.topright .pill{font-size:10px}}
+@media(max-width:600px){
+ .topbar{position:relative;padding:10px 12px}.brand{gap:8px}.mark{width:34px;height:34px;flex:0 0 34px}.brand strong{font-size:12px}.brand small{font-size:9px}
+ .topright{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:7px}.topright>*{min-width:0}.topright .pill{display:flex;align-items:center;justify-content:center;padding:7px 6px;text-align:center;white-space:normal}.topright .btn,.topright .lang-toggle,.topright .iconbtn{width:100%;padding:10px 8px;font-size:12px}.topright #timeSpentPill{grid-column:span 1}.topright #replayIntro{font-size:11px}
+ .main{width:calc(100% - 20px)}.hero{padding-block:22px}.hero h1{font-size:clamp(28px,8vw,42px);line-height:1.08;overflow-wrap:anywhere}.hero p{font-size:14px}.hero-visual{min-height:230px;transform:scale(.96);transform-origin:top center}
+ .cards,.dashboard-grid,.hub-grid,.track-launch-grid,.expanded-gallery,.photo-strip{grid-template-columns:minmax(0,1fr)!important}.span-8,.span-7,.span-6,.span-5,.span-4{grid-column:1/-1}
+ .drawer{width:min(100vw,420px);right:0}.drawerhead{padding:14px}.drawerbody{padding:12px}.menuitem{width:100%;text-align:left;overflow-wrap:anywhere}
+ .module-overlay{padding:0}.module-window{width:100%;height:100dvh;max-height:100dvh;border-radius:0}.module-header{gap:8px;padding:10px}.module-title{font-size:14px}.module-close-hint{display:none}.module-content{padding:12px}.module-cover{min-height:150px;padding:16px}.module-cover h2{font-size:24px}
+ .academy-page{padding:12px!important}.academy-page h2{font-size:clamp(22px,6vw,30px)}.academy-block{padding:12px!important}.inputrow{display:grid;grid-template-columns:minmax(0,1fr);width:100%}.inputrow label{width:100%;min-width:0!important}.inputrow button{width:100%}
+ .photo-card{min-height:140px}.scene-bottom{flex-wrap:wrap}.route-flow{grid-template-columns:minmax(0,1fr)!important}.profilebox{overflow-wrap:anywhere}
 }
-@media(max-width:380px){.module-gallery{grid-template-columns:1fr!important}.module-gallery img{height:105px!important;max-height:105px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
+
+
+
 
 </head>
 <body>
@@ -445,7 +410,7 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
   <button class="intro-skip" id="skipIntro">CLICK TO CONTINUE <span>→</span></button>
 </div></div>
 <div class="app">
-<header class="topbar"><div class="brand"><div class="mark">⌘</div><div><strong>NETWORK ACADEMY</strong><small>BY MUBEN · PROJECT NEXUS</small></div></div><div class="topright"><span class="pill">● SYSTEM READY</span><button class="btn" id="topCreateProfile" type="button">＋ Create Profile</button><button class="btn" id="topLogin" type="button">↪ Log In</button><button class="btn primary" id="topQuiz" type="button">▤ Quiz</button><span class="pill" id="timeSpentPill">TIME 00:00:00</span><button class="btn intro-replay" id="replayIntro" type="button" title="Replay the Network Academy welcome animation">↻ Replay intro</button><button class="iconbtn" id="openMenu" aria-label="Open right-side menu" title="Open menu">☰</button></div></header>
+<header class="topbar"><div class="brand"><div class="mark">⌘</div><div><strong>NETWORK ACADEMY</strong><small>BY MUBEN · PROJECT NEXUS</small></div></div><div class="topright"><span class="pill">● SYSTEM READY</span><button class="btn" id="topCreateProfile" type="button" hidden>＋ Create Profile</button><button class="btn" id="topLogin" type="button" hidden>↪ Log In</button><button class="btn primary" id="topQuiz" type="button" hidden>▤ Quiz</button><button class="btn" id="topNotifications" type="button" aria-label="Student activity notifications">🔔 <span>Activity</span><b id="naTopEventCount" class="event-count" hidden>0</b></button><span class="pill" id="timeSpentPill">TIME 00:00:00</span><button class="btn intro-replay" id="replayIntro" type="button" title="Replay the Network Academy welcome animation">↻ Replay intro</button><button class="lang-toggle" id="languageToggle" type="button" aria-label="Switch language">EN / کوردی</button><button class="iconbtn" id="openMenu" aria-label="Open right-side menu" title="Open menu">☰</button></div></header>
 <main class="main">
 <section class="hero"><div><div class="eyebrow">NETWORK INTELLIGENCE PLATFORM / BUILD 02</div><h1>Understand your connection.<br><span style="color:var(--cyan)">Explore the network.</span></h1><p>A student-built learning lab for exploring how the internet works — from DNS and routing to packet journeys and troubleshooting. Live readings appear only when the browser can provide them; other results are clearly simulated.</p></div><div class="hero-visual" aria-label="Illustrative animated network globe">
   <div class="orbit-label orbit-label-a"><i></i><span>DNS RESOLUTION</span><b>01</b></div>
@@ -464,7 +429,7 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
   <div class="hero-telemetry telemetry-bottom"><div><small>ROUTE NODES</small><strong>08</strong></div><div><small>DATA FLOW</small><strong class="flow-live">ACTIVE <i></i></strong></div></div>
   <div class="hero-visual-caption">NEXUS ORBIT <span>///</span> EXPLORE THE CONNECTIONS</div>
 </div>
-<div class="hero-actions"><button class="btn primary" data-jump="universe">Explore network ↗</button><button class="btn" data-jump="lessons">Start learning</button><button class="btn" data-jump="terminal">Open command lab</button><button class="btn dashboard-language-toggle" id="dashboardLanguageToggle" type="button" aria-label="Switch English and Kurdish language">🌐 EN / کوردی</button></div></section>
+<div class="hero-actions"><button class="btn primary" data-jump="universe">Explore network ↗</button><button class="btn" data-jump="lessons">Start learning</button><button class="btn" data-jump="terminal">Open command lab</button></div></section>
 <section class="learning-portals" aria-label="Choose a learning dashboard">
   <div class="portals-heading"><div><div class="eyebrow">CHOOSE YOUR DOMAIN / NEXUS PATHWAYS</div><h2>Two worlds. One learning academy.</h2><p>Pick a focused dashboard. Each one opens its own learning hub, tools, and guided path.</p></div><span class="portals-index">01 <i> / </i> 02</span></div>
   <div class="portal-grid">
@@ -532,7 +497,7 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opa
 
 <footer class="footer"><span>NETWORK ACADEMY · PROJECT NEXUS</span><span>Created by Muben · Student learning project</span><span>Secure accounts require a backend connection</span><span>Interactive simulations clearly labelled</span></footer>
 </main></div>
-<div class="drawerback" id="drawerBack"></div><aside class="drawer" id="drawer" aria-hidden="true" aria-label="Right-side navigation and project information"><div class="drawerhead"><div><div class="eyebrow">NETWORK ACADEMY</div><strong id="drawerTitle">Quick menu</strong></div><button class="iconbtn" id="closeMenu" aria-label="Close menu">×</button></div><div class="drawerbody" id="drawerBody"><div class="language-menu-row" id="languageMenuRow"><span class="language-menu-label">Language / زمان</span><button class="lang-toggle" id="languageToggle" type="button" aria-label="Switch language">EN / کوردی</button></div><button class="menuitem" data-drawer-page="dashboard"><span>▦</span><span>Dashboard<small>Return to the lab overview</small></span></button><button class="menuitem" data-drawer-page="accountcenter"><span>♙</span><span>Create Profile / Log In<small>Account access and personal profile</small></span></button><button class="menuitem" data-drawer-page="quizstudio"><span>✎</span><span>Quiz Studio<small>Create, publish, and take quizzes</small></span></button><button class="menuitem" data-drawer-page="networkhub"><span>⌘</span><span>Internet & Networking Hub<small>Connections, protocols and performance</small></span></button><button class="menuitem" data-drawer-page="cyberhub"><span>⬡</span><span>Cybersecurity Hub<small>Security foundations and defense</small></span></button><button class="menuitem" data-drawer-page="accountcenter"><span>♙</span><span>Create Profile / Log In<small>Account access and profile</small></span></button><button class="menuitem" data-drawer-page="quizstudio"><span>✎</span><span>Quiz Studio<small>Create, publish, and take quizzes</small></span></button><button class="menuitem" data-drawer-page="owneradmin"><span>♛</span><span>Owner & Admin<small>Creator control center preview</small></span></button><button class="menuitem" data-drawer-page="creator"><span>◉</span><span>Creator profile<small>About Muben</small></span></button><button class="menuitem" data-drawer-page="project"><span>◇</span><span>About the project<small>Purpose and features</small></span></button><button class="menuitem" data-drawer-page="tech"><span>&lt;/&gt;</span><span>Technology & credits<small>What powers this website</small></span></button><button class="menuitem" data-drawer-page="log"><span>☷</span><span>Development log<small>Project milestones</small></span></button><button class="menuitem" data-drawer-page="lessons"><span>▤</span><span>Networking lessons<small>Study core concepts</small></span></button><button class="menuitem" data-drawer-page="knowledgearena"><span>🧠</span><span>Knowledge Arena<small>Quizzes, practical tests & teacher tools</small></span></button><button class="menuitem" data-drawer-page="orbit100"><span>✦</span><span>Learning Orbit<small>Explore labs across multiple departments</small></span></button><button class="menuitem" data-drawer-page="roadmap"><span>▤</span><span>Feature Roadmap<small>Browse 500 future ideas separately</small></span></button><button class="menuitem" data-drawer-page="security"><span>⬡</span><span>Cybersecurity basics<small>Defensive learning</small></span></button><button class="menuitem" data-drawer-page="dns"><span>◎</span><span>DNS Explorer<small>From domain to address</small></span></button><button class="menuitem" data-drawer-page="networking"><span>⇄</span><span>Networking Academy<small>Protocols, routing, and packets</small></span></button><button class="menuitem" data-drawer-page="cyberacademy"><span>⬡</span><span>Cybersecurity Academy<small>Defensive security lessons</small></span></button><button class="menuitem" data-drawer-page="linux"><span>&gt;_</span><span>Linux & Terminal<small>Practice safe command concepts</small></span></button><button class="menuitem" data-drawer-page="packetjourney"><span>➜</span><span>Packet Journey<small>What happens when you browse</small></span></button><button class="menuitem" data-drawer-page="labs"><span>⚗</span><span>Interactive Labs<small>Practice in safe simulations</small></span></button><button class="menuitem" data-drawer-page="toolkit"><span>✣</span><span>Nexus Toolkit · 20 tools<small>Calculators, explainers, and safe labs</small></span></button><button class="menuitem" data-drawer-page="cybercenter"><span>⬡</span><span>Cyber Defense Center<small>Threat awareness and response</small></span></button><button class="menuitem" data-drawer-page="architecture"><span>⌘</span><span>Technical Architecture<small>How Network Academy is built</small></span></button><button class="menuitem" data-drawer-page="changelog"><span>☷</span><span>Version History<small>Release notes and roadmap</small></span></button><button class="menuitem" data-drawer-page="feedback"><span>✉</span><span>Feedback Center<small>Suggest improvements</small></span></button><button class="menuitem" data-drawer-page="comments"><span>☷</span><span>Community Comments<small>Local demo discussion</small></span></button><button class="menuitem" data-drawer-page="progress"><span>✓</span><span>Student Progress<small>Track learning milestones</small></span></button><div class="menu-divider-label">NETWORK ENGINEERING / 50 FEATURES</div>
+<div class="drawerback" id="drawerBack"></div><aside class="drawer" id="drawer" aria-hidden="true" aria-label="Right-side navigation and project information"><div class="drawerhead"><div><div class="eyebrow">NETWORK ACADEMY</div><strong id="drawerTitle">Quick menu</strong></div><button class="iconbtn" id="closeMenu" aria-label="Close menu">×</button></div><div class="drawerbody" id="drawerBody"><div class="quick-auth-actions" aria-label="Account access"><button class="menu-auth-btn" type="button" data-na-quick-auth="login"><span class="menu-auth-icon">↪</span><span>Log In<small>Continue to your account</small></span></button><button class="menu-auth-btn menu-auth-primary" type="button" data-na-quick-auth="create"><span class="menu-auth-icon">＋</span><span>Create Account<small>Join as a student</small></span></button></div><div class="quick-study-actions" aria-label="Quick learning actions"><button class="menuitem quick-action" type="button" data-quick-action="explore-network"><span>🌐</span><span>Explore Network<small>Jump to the network map</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="start-learning"><span>📘</span><span>Start Learning<small>Open the learning section</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="command-lab"><span>⌘</span><span>Command Lab<small>Jump to the command simulator</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="quiz-en"><span>🇬🇧</span><span>English Quiz<small>Open quizzes in English</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="quiz-ku"><span>ک</span><span>کوردی Quiz<small>Quiz بە زمانی کوردی</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="events"><span>🔔</span><span>Student Events & Updates<small>Recent activity and announcements <b id="naMenuEventCount" class="event-count" hidden>0</b></small></span></button></div><div class="quick-profile-card" id="naQuickProfile" aria-live="polite"><div class="quick-avatar" id="naQuickAvatar">⌘</div><div class="quick-profile-copy"><strong id="naQuickProfileName">GUEST PROFILE</strong><span id="naQuickProfileRole">Not signed in</span><small id="naQuickProfileStatus">Your profile stays visible here</small></div></div><button class="menuitem" data-drawer-page="dashboard"><span>▦</span><span>Dashboard<small>Return to the lab overview</small></span></button><button class="menuitem" data-drawer-page="quizstudio"><span>✎</span><span>Quiz Studio<small>Create, publish, and take quizzes</small></span></button><button class="menuitem" data-drawer-page="networkhub"><span>⌘</span><span>Internet & Networking Hub<small>Connections, protocols and performance</small></span></button><button class="menuitem" data-drawer-page="cyberhub"><span>⬡</span><span>Cybersecurity Hub<small>Security foundations and defense</small></span></button><button class="menuitem" data-drawer-page="owneradmin"><span>♛</span><span>Owner & Admin<small>Creator control center preview</small></span></button><button class="menuitem" data-drawer-page="creator"><span>◉</span><span>Creator profile<small>About Muben</small></span></button><button class="menuitem" data-drawer-page="project"><span>◇</span><span>About the project<small>Purpose and features</small></span></button><button class="menuitem" data-drawer-page="tech"><span>&lt;/&gt;</span><span>Technology & credits<small>What powers this website</small></span></button><button class="menuitem" data-drawer-page="log"><span>☷</span><span>Development log<small>Project milestones</small></span></button><button class="menuitem" data-drawer-page="lessons"><span>▤</span><span>Networking lessons<small>Study core concepts</small></span></button><button class="menuitem" data-drawer-page="knowledgearena"><span>🧠</span><span>Knowledge Arena<small>Quizzes, practical tests & teacher tools</small></span></button><button class="menuitem" data-drawer-page="orbit100"><span>✦</span><span>Learning Orbit<small>Explore labs across multiple departments</small></span></button><button class="menuitem" data-drawer-page="roadmap"><span>▤</span><span>Feature Roadmap<small>Browse 500 future ideas separately</small></span></button><button class="menuitem" data-drawer-page="security"><span>⬡</span><span>Cybersecurity basics<small>Defensive learning</small></span></button><button class="menuitem" data-drawer-page="dns"><span>◎</span><span>DNS Explorer<small>From domain to address</small></span></button><button class="menuitem" data-drawer-page="networking"><span>⇄</span><span>Networking Academy<small>Protocols, routing, and packets</small></span></button><button class="menuitem" data-drawer-page="cyberacademy"><span>⬡</span><span>Cybersecurity Academy<small>Defensive security lessons</small></span></button><button class="menuitem" data-drawer-page="linux"><span>&gt;_</span><span>Linux & Terminal<small>Practice safe command concepts</small></span></button><button class="menuitem" data-drawer-page="packetjourney"><span>➜</span><span>Packet Journey<small>What happens when you browse</small></span></button><button class="menuitem" data-drawer-page="labs"><span>⚗</span><span>Interactive Labs<small>Practice in safe simulations</small></span></button><button class="menuitem" data-drawer-page="toolkit"><span>✣</span><span>Nexus Toolkit · 20 tools<small>Calculators, explainers, and safe labs</small></span></button><button class="menuitem" data-drawer-page="cybercenter"><span>⬡</span><span>Cyber Defense Center<small>Threat awareness and response</small></span></button><button class="menuitem" data-drawer-page="architecture"><span>⌘</span><span>Technical Architecture<small>How Network Academy is built</small></span></button><button class="menuitem" data-drawer-page="changelog"><span>☷</span><span>Version History<small>Release notes and roadmap</small></span></button><button class="menuitem" data-drawer-page="feedback"><span>✉</span><span>Feedback Center<small>Suggest improvements</small></span></button><button class="menuitem" data-drawer-page="comments"><span>☷</span><span>Community Comments<small>Local demo discussion</small></span></button><button class="menuitem" data-drawer-page="progress"><span>✓</span><span>Student Progress<small>Track learning milestones</small></span></button><div class="menu-divider-label">NETWORK ENGINEERING / 50 FEATURES</div>
 <button class="menuitem" data-drawer-page="net1"><span>◉</span><span>Network Foundations<small>addressing and models</small></span></button>
 <button class="menuitem" data-drawer-page="net2"><span>⇄</span><span>Routing & Switching<small>paths and LANs</small></span></button>
 <button class="menuitem" data-drawer-page="net3"><span>◎</span><span>DNS & Web Protocols<small>names and requests</small></span></button>
@@ -565,11 +530,17 @@ $('#replayIntro').addEventListener('click',()=>{intro.classList.remove('hide-int
 })();
 function showOnline(){const online=navigator.onLine;$('#onlineValue').textContent=online?'ONLINE':'OFFLINE';$('#onlineTag').textContent=online?'● Browser reports online':'● Browser reports offline';$('#onlineTag').className='tag '+(online?'good':'');$('#connectionValue').textContent=navigator.connection?.effectiveType||'Unavailable';$('#langValue').textContent=navigator.language||'Unknown';try{$('#zoneValue').textContent=Intl.DateTimeFormat().resolvedOptions().timeZone.split('/').pop().replaceAll('_',' ')}catch(e){$('#zoneValue').textContent='Unknown'}$('#onlineSub').textContent='Browser-reported status'}showOnline();window.addEventListener('online',showOnline);window.addEventListener('offline',showOnline);
 const drawer=$('#drawer'),back=$('#drawerBack');function openDrawer(){drawer.classList.add('open');back.classList.add('open');drawer.setAttribute('aria-hidden','false')}function closeDrawer(){drawer.classList.remove('open');back.classList.remove('open');drawer.setAttribute('aria-hidden','true')}$('#openMenu').onclick=openDrawer;$('#closeMenu').onclick=closeDrawer;
-$('#topCreateProfile').onclick=()=>openModule('accountcenter');$('#topLogin').onclick=()=>{openModule('accountcenter');setTimeout(()=>document.getElementById('naLoginUser')?.focus(),100)};$('#topQuiz').onclick=()=>openModule('quizstudio');
+$('#topNotifications').onclick=()=>{openModule('notifications');naRecordStudentEvent('Opened student activity center')};$('#topCreateProfile').onclick=()=>openModule('accountcenter');$('#topLogin').onclick=()=>{openModule('accountcenter');setTimeout(()=>document.getElementById('naLoginUser')?.focus(),100)};$('#topQuiz').onclick=()=>openModule('quizstudio');
+function naReadStudentEvents(){try{const v=JSON.parse(localStorage.getItem('na_student_events_v1')||'[]');return Array.isArray(v)?v:[]}catch{return[]}}
+function naRecordStudentEvent(label){try{const events=naReadStudentEvents();events.unshift({label:String(label),at:new Date().toISOString(),read:false});localStorage.setItem('na_student_events_v1',JSON.stringify(events.slice(0,40)));naRefreshEventBadges()}catch{}}
+function naRefreshEventBadges(){const unread=naReadStudentEvents().filter(e=>!e.read).length;['naTopEventCount','naMenuEventCount'].forEach(id=>{const el=document.getElementById(id);if(el){el.textContent=String(unread);el.hidden=!unread}})}
+document.addEventListener('submit',e=>{const id=e.target?.id;if(id==='naSignupForm')naRecordStudentEvent('Student account/profile registration attempted');else if(id==='naLoginForm')naRecordStudentEvent('Account login attempted')},true);
+document.addEventListener('click',e=>{const b=e.target.closest?.('[data-quiz], [data-quiz-answer], #naQuizSubmit');if(b)naRecordStudentEvent('Student quiz activity')},true);
+naRefreshEventBadges();
 const naSessionStart=Date.now();let naPreviousTime=0;try{naPreviousTime=Number(localStorage.getItem('na_time_spent_ms')||0)}catch{}function naUpdateTime(){const total=naPreviousTime+Date.now()-naSessionStart,seconds=Math.floor(total/1000),h=Math.floor(seconds/3600),m=Math.floor(seconds%3600/60),sec=seconds%60,el=$('#timeSpentPill');if(el)el.textContent='TIME '+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0');try{localStorage.setItem('na_time_spent_ms',String(total))}catch{}}setInterval(naUpdateTime,1000);naUpdateTime();back.onclick=closeDrawer;document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeDrawer()}});
 const pageText={
 networkhub:`<div class="academy-page hub-page"><div class="academy-kicker">DOMAIN 01 / INTERNET & NETWORKING</div><h2>Understand the connection, from device to destination.</h2><p>Start with the basics, then follow the full journey: local Wi-Fi, addressing, DNS, routing, secure web connections, and cloud delivery. This hub uses existing lessons and labelled simulations rather than pretending to inspect your real network.</p><div class="academy-block"><h3>Choose a starting point</h3><div class="hub-grid"><button class="hub-card" data-module-open="internetmap"><span>01 / BIG PICTURE</span><b>The Internet, Explained</b><small>How networks interconnect, how ISPs and routers fit together.</small><em>Open lesson ↗</em></button><button class="hub-card" data-module-open="ipaddressing"><span>02 / ADDRESSING</span><b>IP Addresses & Subnets</b><small>IPv4, IPv6, private ranges, CIDR, and gateways.</small><em>Open lesson ↗</em></button><button class="hub-card" data-module-open="dns"><span>03 / NAME RESOLUTION</span><b>DNS Deep Dive</b><small>Resolvers, authoritative servers, records, caching, and TTL.</small><em>Open lesson ↗</em></button><button class="hub-card" data-module-open="routing"><span>04 / PATHS</span><b>Routing & Switching</b><small>Frames, packets, next hops, switches, VLANs, and routes.</small><em>Open lesson ↗</em></button><button class="hub-card" data-module-open="wifi"><span>05 / WIRELESS</span><b>Wi-Fi & Wireless</b><small>Radio basics, access points, interference, and safer setup.</small><em>Open lesson ↗</em></button><button class="hub-card" data-module-open="packetjourney"><span>06 / FOLLOW THE DATA</span><b>Packet Journey</b><small>Walk through DNS, transport, TLS, HTTP, and rendering.</small><em>Open simulation ↗</em></button></div></div><div class="academy-block"><h3>Suggested learning route</h3><ol><li>Learn the difference between a local network and the internet.</li><li>Understand IP addresses, subnet masks, gateways, and DNS.</li><li>Trace a sample website request through routing, TLS, and HTTP.</li><li>Practise troubleshooting with one hypothesis at a time.</li></ol></div><div class="academy-callout"><b>Accuracy note:</b> Browser-reported connection details are limited. The globe, routes, and packet journeys are educational models, not a live map of the internet.</div></div>`,
-cyberhub:`<div class="academy-page hub-page"><div class="academy-kicker">DOMAIN 02 / CYBERSECURITY & DEFENSE</div><h2>Learn to protect systems, not just recognise scary words.</h2><p>Cybersecurity is a cycle of understanding assets, reducing risk, noticing evidence, responding responsibly, and improving. All practical examples in this hub are designed for learning and authorised environments.</p><div class="academy-block"><h3>Choose a defender's path</h3><div class="hub-grid cyber-hub-grid"><button class="hub-card cyber-hub-card" data-module-open="cyber1"><span>01 / FOUNDATIONS</span><b>Security Foundations</b><small>Threats, risk, trust boundaries, and least privilege.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="phishing"><span>02 / HUMAN FACTORS</span><b>Threat Awareness</b><small>Spot phishing, impersonation, urgency, and suspicious requests.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="crypto"><span>03 / DIGITAL TRUST</span><b>Cryptography & Identity</b><small>Encryption, hashing, signatures, certificates, and authentication.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="blue-team"><span>04 / DEFENSE OPERATIONS</span><b>Blue Team & Response</b><small>Understand logs, alerts, investigation, containment, and recovery.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="owasp"><span>05 / WEB SECURITY</span><b>Web Application Security</b><small>Input handling, access control, secure design, and common risks.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="ethical-labs"><span>06 / SAFE PRACTICE</span><b>Ethical Cybersecurity Lab</b><small>Use fictional scenarios and intentionally safe learning exercises.</small><em>Open lab ↗</em></button></div></div><div class="academy-block"><h3>Defender's checklist</h3><ul><li>Use unique passwords or passkeys and enable multifactor authentication where available.</li><li>Keep devices and software updated from trusted sources.</li><li>Give accounts only the permissions they need.</li><li>Keep protected backups and test recovery.</li><li>Record observations separately from guesses; a single alert is not proof by itself.</li><li>Only test systems you own or have explicit permission to assess.</li></ul></div><div class="academy-callout"><b>Ethics by design:</b> Learning support should focus on concepts, safe defensive practice, and practice problems—not answers for a live or graded assessment.</div></div>`,
+cyberhub:`<div class="academy-page hub-page"><div class="academy-kicker">DOMAIN 02 / CYBERSECURITY & DEFENSE</div><h2>Learn to protect systems, not just recognise scary words.</h2><p>Cybersecurity is a cycle of understanding assets, reducing risk, noticing evidence, responding responsibly, and improving. All practical examples in this hub are designed for learning and authorised environments.</p><div class="academy-block"><h3>Choose a defender's path</h3><div class="hub-grid cyber-hub-grid"><button class="hub-card cyber-hub-card" data-module-open="cyber1"><span>01 / FOUNDATIONS</span><b>Security Foundations</b><small>Threats, risk, trust boundaries, and least privilege.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="phishing"><span>02 / HUMAN FACTORS</span><b>Threat Awareness</b><small>Spot phishing, impersonation, urgency, and suspicious requests.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="crypto"><span>03 / DIGITAL TRUST</span><b>Cryptography & Identity</b><small>Encryption, hashing, signatures, certificates, and authentication.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="blue-team"><span>04 / DEFENSE OPERATIONS</span><b>Blue Team & Response</b><small>Understand logs, alerts, investigation, containment, and recovery.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="owasp"><span>05 / WEB SECURITY</span><b>Web Application Security</b><small>Input handling, access control, secure design, and common risks.</small><em>Open lesson ↗</em></button><button class="hub-card cyber-hub-card" data-module-open="ethical-labs"><span>06 / SAFE PRACTICE</span><b>Ethical Cybersecurity Lab</b><small>Use fictional scenarios and intentionally safe learning exercises.</small><em>Open lab ↗</em></button></div></div><div class="academy-block"><h3>Defender's checklist</h3><ul><li>Use unique passwords or passkeys and enable multifactor authentication where available.</li><li>Keep devices and software updated from trusted sources.</li><li>Give accounts only the permissions they need.</li><li>Keep protected backups and test recovery.</li><li>Record observations separately from guesses; a single alert is not proof by itself.</li><li>Only test systems you own or have explicit permission to assess.</li></ul></div><div class="academy-callout"><b>Ethics by design:</b> NEXUS AI is intended to teach concepts, safe defensive practice, and practice problems. It should not provide answers for a live or graded assessment.</div></div>`,
 studentaccounts:`<div class="academy-page"><div class="academy-kicker">LEARNER ACCESS / PREVIEW</div><h2>Student Accounts</h2><p>Sign in or create a student account below. The first owner account must use the username Muben; choose your own password. This browser-only prototype does not provide secure server authentication.</p><div class="academy-block"><h3>Create a student profile · local demo</h3><form id="studentDemoForm" class="inputrow"><label style="flex:1;min-width:180px">Display name<input id="studentDemoName" required maxlength="40" autocomplete="nickname" placeholder="Your display name" style="display:block;width:100%;margin-top:6px;background:#0a1725;border:1px solid #2b4055;border-radius:9px;padding:10px;color:var(--text)"></label><label style="flex:1;min-width:180px">Student invite code (optional)<input id="studentDemoCode" maxlength="24" placeholder="Provided by your teacher" style="display:block;width:100%;margin-top:6px;background:#0a1725;border:1px solid #2b4055;border-radius:9px;padding:10px;color:var(--text)"></label><button class="btn primary" type="submit" style="align-self:end">Create demo profile</button></form><div id="studentDemoStatus" class="result" style="margin-top:12px">No demo profile created in this browser.</div><button class="btn" id="studentDemoClear" type="button">Clear local demo profile</button></div><div class="academy-block"><h3>What a real student account will include</h3><ul><li>Secure sign-in handled by an authentication provider.</li><li>Assigned quizzes and practical challenges.</li><li>Personal scores, explanations, and learning history.</li><li>Only the student's own results are visible to that student.</li><li>Account creation can be limited to student sign-up; teacher and administrator accounts are invited by the owner.</li></ul></div><div class="notice"><b>Demo privacy:</b> this prototype saves only the display name and invite-code text in this browser. It does not ask for or store a password and does not create a real account. Do not enter private information.</div></div>`,
 owneradmin:`<div class="academy-page"><div class="academy-kicker">PROJECT OWNER / ADMINISTRATION PREVIEW</div><h2>Owner & Admin Control Center</h2><p><b>Founder / creator:</b> Muben · Network Academy. This identifies the project creator in the interface; actual repository and hosting ownership are controlled by the relevant GitHub account and hosting settings.</p><div class="academy-block"><h3>Planned permissions</h3><div class="featurelist"><div class="feature-row"><b>Student</b><span>Take quizzes, view own scores, update own profile.</span></div><div class="feature-row"><b>Teacher</b><span>Create and assign tests; review results for assigned classes.</span></div><div class="feature-row"><b>Administrator</b><span>Manage accounts and platform settings within granted permissions.</span></div><div class="feature-row"><b>Owner</b><span>Manage administrators, configure the platform, and control project settings.</span></div></div></div><div class="academy-block"><h3>Admin checklist</h3><ul><li>Approve or invite student accounts.</li><li>Create teacher accounts by invitation rather than public sign-up.</li><li>Build quizzes and assign them to classes.</li><li>View class-level progress only when authorized.</li><li>Review account access and remove access when needed.</li><li>Export only necessary learning data and protect it.</li></ul></div><div class="academy-callout">Security requirement: hiding this panel is not security. Real role checks must be enforced by the authentication provider and database policies. Never put an administrator password or secret API key in this HTML file.</div><div class="academy-block"><h3>Backend plan</h3><p>Recommended: Supabase Auth for secure sign-in and a database protected by Row Level Security. The owner account should be assigned securely in the backend dashboard, not by a role dropdown on the public website.</p><p><a href="https://supabase.com/docs/guides/auth" target="_blank" rel="noopener noreferrer">Supabase Auth documentation</a> · <a href="https://supabase.com/docs/guides/database/secure-data" target="_blank" rel="noopener noreferrer">Database security documentation</a></p></div></div>`,
 roadmap:`<div class="academy-page"><div class="academy-kicker">PROJECT NEXUS / PLANNING</div><h2>Feature Roadmap</h2><p>The 500 ideas are kept here as a separate planning catalog, so they no longer take over the main dashboard.</p></div>`,
@@ -634,7 +605,7 @@ careerpaths:`<div class="academy-page"><div class="academy-kicker">DEPARTMENT 16
 glossary:`<div class="academy-page"><div class="academy-kicker">REFERENCE LIBRARY / GLOSSARY</div><h2>Internet & Cybersecurity Glossary</h2><p>Use this quick reference to review common terms. Search in the box to filter definitions.</p><input id="glossarySearch" class="glossary-search" placeholder="Search: DNS, TLS, router, firewall…" aria-label="Search glossary"><div id="glossaryItems" class="glossary-grid"></div></div>`,
 
  dashboard:`<h2>Quick menu</h2><p>Choose a module to view creator and project information or open a focused learning view.</p>`};
-function menuMarkup(){return `<div class="menu-hero"><div class="menu-orb">⌘</div><div><div class="menu-overline">CONTROL DECK / 01</div><strong>Explore the academy</strong><small>Pick a destination. Build your skills.</small></div></div><label class="menu-search-wrap"><span>⌕</span><input id="menuSearch" type="search" placeholder="Search lessons, tools, topics…" autocomplete="off" aria-label="Search menu items"><kbd>⌕</kbd></label><div class="menu-filters" role="group" aria-label="Filter navigation"><button type="button" class="menu-filter active" data-menu-filter="all">All</button><button type="button" class="menu-filter" data-menu-filter="learn">Learn</button><button type="button" class="menu-filter" data-menu-filter="labs">Labs & tools</button><button type="button" class="menu-filter" data-menu-filter="project">Project</button></div><div class="menu-results" id="menuResults">ALL DESTINATIONS <span>Browse by topic</span></div><button class="menuitem" data-drawer-page="dashboard"><span>▦</span><span>Dashboard<small>Return to the lab overview</small></span></button><button class="menuitem" data-drawer-page="networkhub"><span>⌘</span><span>Internet & Networking Hub<small>Connections, protocols and performance</small></span></button><button class="menuitem" data-drawer-page="cyberhub"><span>⬡</span><span>Cybersecurity Hub<small>Security foundations and defense</small></span></button><button class="menuitem" data-drawer-page="creator"><span>◉</span><span>Creator profile<small>About Muben</small></span></button><button class="menuitem" data-drawer-page="project"><span>◇</span><span>About the project<small>Purpose and features</small></span></button><button class="menuitem" data-drawer-page="tech"><span>&lt;/&gt;</span><span>Technology & credits<small>What powers this website</small></span></button><button class="menuitem" data-drawer-page="log"><span>☷</span><span>Development log<small>Project milestones</small></span></button><button class="menuitem" data-drawer-page="lessons"><span>▤</span><span>Networking lessons<small>Study core concepts</small></span></button><button class="menuitem" data-drawer-page="security"><span>⬡</span><span>Cybersecurity basics<small>Defensive learning</small></span></button><button class="menuitem" data-drawer-page="dns"><span>◎</span><span>DNS Explorer<small>From domain to address</small></span></button><button class="menuitem" data-drawer-page="networking"><span>⇄</span><span>Networking Academy<small>Protocols, routing, and packets</small></span></button><button class="menuitem" data-drawer-page="cyberacademy"><span>⬡</span><span>Cybersecurity Academy<small>Defensive security lessons</small></span></button><button class="menuitem" data-drawer-page="linux"><span>&gt;_</span><span>Linux & Terminal<small>Practice safe command concepts</small></span></button><button class="menuitem" data-drawer-page="packetjourney"><span>➜</span><span>Packet Journey<small>What happens when you browse</small></span></button><button class="menuitem" data-drawer-page="labs"><span>⚗</span><span>Interactive Labs<small>Practice in safe simulations</small></span></button><button class="menuitem" data-drawer-page="toolkit"><span>✣</span><span>Nexus Toolkit · 20 tools<small>Calculators, explainers, and safe labs</small></span></button><button class="menuitem" data-drawer-page="cybercenter"><span>⬡</span><span>Cyber Defense Center<small>Threat awareness and response</small></span></button><button class="menuitem" data-drawer-page="architecture"><span>⌘</span><span>Technical Architecture<small>How Network Academy is built</small></span></button><button class="menuitem" data-drawer-page="changelog"><span>☷</span><span>Version History<small>Release notes and roadmap</small></span></button><button class="menuitem" data-drawer-page="feedback"><span>✉</span><span>Feedback Center<small>Suggest improvements</small></span></button><button class="menuitem" data-drawer-page="comments"><span>☷</span><span>Community Comments<small>Local demo discussion</small></span></button><button class="menuitem" data-drawer-page="progress"><span>✓</span><span>Student Progress<small>Track learning milestones</small></span></button><div class="menu-divider-label">NETWORK ENGINEERING / 50 FEATURES</div>
+function menuMarkup(){return `<div class="menu-hero"><div class="menu-orb">⌘</div><div><div class="menu-overline">CONTROL DECK / 01</div><strong>Welcome to Network Academy</strong><small>Your space to learn, practice, and grow.</small></div></div><div class="quick-auth-actions" aria-label="Account access"><button class="menu-auth-btn" type="button" data-na-quick-auth="login"><span class="menu-auth-icon">↪</span><span>Log In<small>Continue to your account</small></span></button><button class="menu-auth-btn menu-auth-primary" type="button" data-na-quick-auth="create"><span class="menu-auth-icon">＋</span><span>Create Account<small>Join as a student</small></span></button></div><div class="quick-study-actions" aria-label="Quick learning actions"><button class="menuitem quick-action" type="button" data-quick-action="explore-network"><span>🌐</span><span>Explore Network<small>Jump to the network map</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="start-learning"><span>📘</span><span>Start Learning<small>Open the learning section</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="command-lab"><span>⌘</span><span>Command Lab<small>Jump to the command simulator</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="quiz-en"><span>🇬🇧</span><span>English Quiz<small>Open quizzes in English</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="quiz-ku"><span>ک</span><span>کوردی Quiz<small>Quiz بە زمانی کوردی</small></span></button><button class="menuitem quick-action" type="button" data-quick-action="events"><span>🔔</span><span>Student Events & Updates<small>Recent activity and announcements <b id="naMenuEventCount" class="event-count" hidden>0</b></small></span></button></div><div class="quick-profile-card" id="naQuickProfile" aria-live="polite"><div class="quick-avatar" id="naQuickAvatar">⌘</div><div class="quick-profile-copy"><strong id="naQuickProfileName">GUEST PROFILE</strong><span id="naQuickProfileRole">Not signed in</span><small id="naQuickProfileStatus">Your profile stays visible here</small></div></div><label class="menu-search-wrap"><span>⌕</span><input id="menuSearch" type="search" placeholder="Search lessons, tools, topics…" autocomplete="off" aria-label="Search menu items"><kbd>⌕</kbd></label><div class="menu-filters" role="group" aria-label="Filter navigation"><button type="button" class="menu-filter active" data-menu-filter="all">All</button><button type="button" class="menu-filter" data-menu-filter="learn">Learn</button><button type="button" class="menu-filter" data-menu-filter="labs">Labs & tools</button><button type="button" class="menu-filter" data-menu-filter="project">Project</button></div><div class="menu-results" id="menuResults">ALL DESTINATIONS <span>Browse by topic</span></div><button class="menuitem" data-drawer-page="dashboard"><span>▦</span><span>Dashboard<small>Return to the lab overview</small></span></button><button class="menuitem" data-drawer-page="networkhub"><span>⌘</span><span>Internet & Networking Hub<small>Connections, protocols and performance</small></span></button><button class="menuitem" data-drawer-page="cyberhub"><span>⬡</span><span>Cybersecurity Hub<small>Security foundations and defense</small></span></button><button class="menuitem" data-drawer-page="creator"><span>◉</span><span>Creator profile<small>About Muben</small></span></button><button class="menuitem" data-drawer-page="project"><span>◇</span><span>About the project<small>Purpose and features</small></span></button><button class="menuitem" data-drawer-page="tech"><span>&lt;/&gt;</span><span>Technology & credits<small>What powers this website</small></span></button><button class="menuitem" data-drawer-page="log"><span>☷</span><span>Development log<small>Project milestones</small></span></button><button class="menuitem" data-drawer-page="lessons"><span>▤</span><span>Networking lessons<small>Study core concepts</small></span></button><button class="menuitem" data-drawer-page="security"><span>⬡</span><span>Cybersecurity basics<small>Defensive learning</small></span></button><button class="menuitem" data-drawer-page="dns"><span>◎</span><span>DNS Explorer<small>From domain to address</small></span></button><button class="menuitem" data-drawer-page="networking"><span>⇄</span><span>Networking Academy<small>Protocols, routing, and packets</small></span></button><button class="menuitem" data-drawer-page="cyberacademy"><span>⬡</span><span>Cybersecurity Academy<small>Defensive security lessons</small></span></button><button class="menuitem" data-drawer-page="linux"><span>&gt;_</span><span>Linux & Terminal<small>Practice safe command concepts</small></span></button><button class="menuitem" data-drawer-page="packetjourney"><span>➜</span><span>Packet Journey<small>What happens when you browse</small></span></button><button class="menuitem" data-drawer-page="labs"><span>⚗</span><span>Interactive Labs<small>Practice in safe simulations</small></span></button><button class="menuitem" data-drawer-page="toolkit"><span>✣</span><span>Nexus Toolkit · 20 tools<small>Calculators, explainers, and safe labs</small></span></button><button class="menuitem" data-drawer-page="cybercenter"><span>⬡</span><span>Cyber Defense Center<small>Threat awareness and response</small></span></button><button class="menuitem" data-drawer-page="architecture"><span>⌘</span><span>Technical Architecture<small>How Network Academy is built</small></span></button><button class="menuitem" data-drawer-page="changelog"><span>☷</span><span>Version History<small>Release notes and roadmap</small></span></button><button class="menuitem" data-drawer-page="feedback"><span>✉</span><span>Feedback Center<small>Suggest improvements</small></span></button><button class="menuitem" data-drawer-page="comments"><span>☷</span><span>Community Comments<small>Local demo discussion</small></span></button><button class="menuitem" data-drawer-page="progress"><span>✓</span><span>Student Progress<small>Track learning milestones</small></span></button><div class="menu-divider-label">NETWORK ENGINEERING / 50 FEATURES</div>
 <button class="menuitem" data-drawer-page="net1"><span>◉</span><span>Network Foundations<small>addressing and models</small></span></button>
 <button class="menuitem" data-drawer-page="net2"><span>⇄</span><span>Routing & Switching<small>paths and LANs</small></span></button>
 <button class="menuitem" data-drawer-page="net3"><span>◎</span><span>DNS & Web Protocols<small>names and requests</small></span></button>
@@ -668,13 +639,14 @@ function menuMarkup(){return `<div class="menu-hero"><div class="menu-orb">⌘</
 <button class="menuitem" data-drawer-page="glossary"><span>Aa</span><span>Internet & Cyber Glossary<small>Search key terms</small></span></button>
 <div class="notice">Choose a module to open its own learning view. Educational simulations are labelled; no real scans are run.</div>`}
 function bindDrawerButtons(){
- const items=$$('[data-drawer-page]');
+  const items=$$('[data-drawer-page]');
  const categories={dashboard:'project',networkhub:'learn',cyberhub:'learn',studentaccounts:'project',accountcenter:'project',quizstudio:'labs',owneradmin:'project',creator:'project',project:'project',tech:'project',log:'project',changelog:'project',architecture:'project',feedback:'project',comments:'project',progress:'project',lessons:'learn',security:'learn',dns:'learn',networking:'learn',cyberacademy:'learn',linux:'learn',packetjourney:'learn',net1:'learn',net2:'learn',net3:'learn',net4:'learn',net5:'learn',cyber1:'learn',cyber2:'learn',cyber3:'learn',cyber4:'learn',cyber5:'learn',internetmap:'learn',ipaddressing:'learn',careerpaths:'learn',glossary:'learn',labs:'labs',toolkit:'labs',cybercenter:'labs',knowledgearena:'labs',orbit100:'labs',roadmap:'labs'};
  items.forEach(b=>{b.dataset.menuCategory=categories[b.dataset.drawerPage]||'learn';b.addEventListener('click',()=>showDrawerPage(b.dataset.drawerPage))});
  const search=$('#menuSearch'),filters=$$('[data-menu-filter]'),results=$('#menuResults');let active='all';
  function filterMenu(){const q=(search?.value||'').trim().toLowerCase();let count=0;items.forEach(b=>{const okCat=active==='all'||b.dataset.menuCategory===active;const okText=!q||b.textContent.toLowerCase().includes(q);b.hidden=!(okCat&&okText);if(!b.hidden)count++});$$('.menu-divider-label').forEach(h=>h.hidden=active!=='all'||!!q);if(results)results.innerHTML=(q||active!=='all'?'FILTERED DESTINATIONS':'ALL DESTINATIONS')+' <span>'+count+' available</span>';}
  search?.addEventListener('input',filterMenu);filters.forEach(f=>f.addEventListener('click',()=>{active=f.dataset.menuFilter;filters.forEach(x=>x.classList.toggle('active',x===f));filterMenu()}));filterMenu();
 }
+document.addEventListener('click',e=>{const b=e.target.closest?.('[data-quick-action]');if(!b)return;const action=b.dataset.quickAction;if(action==='quiz-en'||action==='quiz-ku'){const wantKurdish=action==='quiz-ku';if(typeof kurdishMode!=='undefined'&&kurdishMode!==wantKurdish)setLanguage();closeDrawer();openModule('quizstudio');naRecordStudentEvent(wantKurdish?'Opened Kurdish quiz (interface language)':'Opened English quiz');return}if(action==='events'){closeDrawer();openModule('notifications');return}const jumpMap={'explore-network':'universe','start-learning':'lessons','command-lab':'terminal'};const target=jumpMap[action];if(target){closeDrawer();const section=document.getElementById(target);if(section)section.scrollIntoView({behavior:'smooth',block:'start'});else openModule(target)}});
 const orbitExpansionItems = [
   ['Network Architecture Canvas', 'Network Architecture', 'Plan a small fictional network with users, switches, routers, servers, and security boundaries.', 'Draw a home, school, or small-office topology and label each device.'],
   ['LAN vs WAN Explorer', 'Network Architecture', 'Compare local networks, wide-area links, and the roles they play in end-to-end communication.', 'Sort example connections into LAN, WAN, or internet access.'],
@@ -997,7 +969,8 @@ function initOrbitExpansion(){
   'Cybersecurity':'Build defensive security knowledge, safer habits, and threat awareness.',
   'Linux & Tools':'Learn terminal concepts and safe system administration workflows.',
   'Monitoring & Performance':'Interpret fictional metrics, latency, loss, and availability.',
-  'Student Success':'Practice, revise, reflect, and prepare for classroom assessments.' };
+  'Student Success':'Practice, revise, reflect, and prepare for classroom assessments.'
+ };
  const cats=[...new Set(orbitExpansionItems.map(x=>x[1]))];
  category.innerHTML='<option value="all">All departments</option>'+cats.map(c=>`<option value="${escText(c)}">${escText(c)}</option>`).join('');
  function updateProgress(){const count=$('#orbitProgressCount'),fill=$('#orbitProgressFill');if(count)count.textContent=`${done.size} / ${orbitExpansionItems.length}`;if(fill)fill.style.width=(done.size/orbitExpansionItems.length*100)+'%'}
@@ -1042,15 +1015,23 @@ function naRead(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{ret
 function naWrite(k,v){try{localStorage.setItem(k,JSON.stringify(v));return true}catch{return false}}
 function naUser(){return naRead('na_current_user',null)}
 function naStatus(id,msg){const e=document.getElementById(id);if(e)e.textContent=msg}
-async function naHash(v){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function naHash(v){if(!globalThis.crypto?.subtle)throw new Error('Secure password hashing is unavailable. Open the HTTPS GitHub Pages link in an updated browser.');const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(v));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function syncQuizAccount(account,signIn=false){try{let list=naRead('na_accounts_local_v1',[]);if(!Array.isArray(list))list=[];const next={name:account.username,role:account.role,passHash:account.passwordHash,createdAt:account.createdAt||new Date().toISOString()};const idx=list.findIndex(x=>String(x.name||'').toLowerCase()===String(account.username||'').toLowerCase());if(idx>=0)list[idx]={...list[idx],...next};else list.push(next);naWrite('na_accounts_local_v1',list);if(signIn)naWrite('na_session_local_v1',{name:next.name,role:next.role,createdAt:next.createdAt});return true}catch{return false}}
 function initAccountCenter(){
+ const escAccount=(value)=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  let accounts=naRead('na_accounts',[]);
- if(!accounts.some(a=>a.username.toLowerCase()==='muben')){accounts.push({username:'Muben',role:'owner',passwordHash:'fab35f809190c8b6b556692d9089eb675044d2c5c6c114aa5171939f6509c67f',createdAt:new Date().toISOString()});naWrite('na_accounts',accounts)}
- const render=()=>{const u=naUser(),p=document.getElementById('naProfilePanel'),staff=document.getElementById('naStaffPanel');if(p)p.innerHTML=u?`<strong>${esc(u.username)}</strong><div>Role: ${esc(u.role)}</div><div>Time on site: ${document.getElementById('timeSpentPill')?.textContent||'counting'}</div><div>Profile created: ${esc(u.createdAt||'Existing profile')}</div>`:'Log in to view your profile.';if(staff)staff.style.display=u?.role==='owner'?'block':'none'};
- document.getElementById('naSignupForm')?.addEventListener('submit',async e=>{e.preventDefault();const username=document.getElementById('naSignupUser').value.trim(),password=document.getElementById('naSignupPass').value;const list=naRead('na_accounts',[]);if(username.length<3){naStatus('naSignupStatus','Username must be at least 3 characters.');return}if(list.some(a=>a.username.toLowerCase()===username.toLowerCase())){naStatus('naSignupStatus','Username already exists.');return}list.push({username,role:'student',passwordHash:await naHash(password),createdAt:new Date().toISOString()});naWrite('na_accounts',list);naStatus('naSignupStatus','Student profile created in this browser. You can now log in.');e.target.reset()});
- document.getElementById('naLoginForm')?.addEventListener('submit',async e=>{e.preventDefault();const username=document.getElementById('naLoginUser').value.trim(),password=document.getElementById('naLoginPass').value,list=naRead('na_accounts',[]),a=list.find(x=>x.username.toLowerCase()===username.toLowerCase());if(!a||a.passwordHash!==await naHash(password)){naStatus('naLoginStatus','Incorrect username or password.');return}naWrite('na_current_user',{username:a.username,role:a.role,createdAt:a.createdAt});naStatus('naLoginStatus','Logged in as '+a.username+' ('+a.role+').');e.target.reset();render()});
- document.getElementById('naLogout')?.addEventListener('click',()=>{localStorage.removeItem('na_current_user');render();naStatus('naLoginStatus','Logged out.')});
- document.getElementById('naStaffForm')?.addEventListener('submit',async e=>{e.preventDefault();if(naUser()?.role!=='owner'){naStatus('naStaffStatus','Only the owner can create staff accounts.');return}const username=document.getElementById('naStaffUser').value.trim(),password=document.getElementById('naStaffPass').value,role=document.getElementById('naStaffRole').value,list=naRead('na_accounts',[]);if(list.some(a=>a.username.toLowerCase()===username.toLowerCase())){naStatus('naStaffStatus','Username already exists.');return}list.push({username,role,passwordHash:await naHash(password),createdAt:new Date().toISOString()});naWrite('na_accounts',list);naStatus('naStaffStatus',role+' account created.');e.target.reset()});render();
+ if(!Array.isArray(accounts))accounts=[];
+ accounts=accounts.filter(a=>a&&typeof a==='object');
+ const ownerHash='fab35f809190c8b6b556692d9089eb675044d2c5c6c114aa5171939f6509c67f';
+ let owner=accounts.find(a=>String(a.username||'').toLowerCase()==='muben');
+ if(!owner){owner={username:'Muben',role:'owner',passwordHash:ownerHash,createdAt:new Date().toISOString()};accounts.push(owner)}else{owner.role='owner';owner.passwordHash=ownerHash}
+ naWrite('na_accounts',accounts);
+ syncQuizAccount(owner,false);
+ const render=()=>{const u=naUser(),p=document.getElementById('naProfilePanel'),staff=document.getElementById('naStaffPanel');if(p)p.innerHTML=u?`<strong>${escAccount(u.username)}</strong><div>Role: ${escAccount(u.role)}</div><div>Time on site: ${document.getElementById('timeSpentPill')?.textContent||'counting'}</div><div>Profile created: ${escAccount(u.createdAt||'Existing profile')}</div>`:'Log in to view your profile.';if(staff)staff.style.display=u?.role==='owner'?'block':'none'};
+ document.getElementById('naSignupForm')?.addEventListener('submit',async e=>{e.preventDefault();const username=document.getElementById('naSignupUser').value.trim(),password=document.getElementById('naSignupPass').value;const rawList=naRead('na_accounts',[]),list=Array.isArray(rawList)?rawList.filter(a=>a&&typeof a==='object'):[];if(username.length<3){naStatus('naSignupStatus','Username must be at least 3 characters.');return}if(list.some(a=>String(a.username||'').toLowerCase()===username.toLowerCase())){naStatus('naSignupStatus','Username already exists.');return}try{const account={username,role:'student',passwordHash:await naHash(password),createdAt:new Date().toISOString()};list.push(account);naWrite('na_accounts',list);syncQuizAccount(account,false);naStatus('naSignupStatus','Student profile created in this browser. You can now log in.');e.target.reset()}catch(err){naStatus('naSignupStatus',err.message||'Could not create profile in this browser.')}});
+ document.getElementById('naLoginForm')?.addEventListener('submit',async e=>{e.preventDefault();const username=document.getElementById('naLoginUser').value.trim(),password=document.getElementById('naLoginPass').value,rawList=naRead('na_accounts',[]),list=Array.isArray(rawList)?rawList.filter(x=>x&&typeof x==='object'):[],a=list.find(x=>String(x.username||'').toLowerCase()===username.toLowerCase());try{if(!a||a.passwordHash!==await naHash(password)){naStatus('naLoginStatus','Incorrect username or password. Check spelling and use the same browser where the profile was created.');return}naWrite('na_current_user',{username:a.username,role:a.role,createdAt:a.createdAt});syncQuizAccount(a,true);naStatus('naLoginStatus','Logged in as '+a.username+' ('+a.role+').');e.target.reset();render()}catch(err){naStatus('naLoginStatus',err.message||'Login could not complete. Please open the HTTPS site in an updated browser.')}});
+ document.getElementById('naLogout')?.addEventListener('click',()=>{localStorage.removeItem('na_current_user');localStorage.removeItem('na_session_local_v1');render();naStatus('naLoginStatus','Logged out.')});
+ document.getElementById('naStaffForm')?.addEventListener('submit',async e=>{e.preventDefault();if(naUser()?.role!=='owner'){naStatus('naStaffStatus','Only the owner can create staff accounts.');return}const username=document.getElementById('naStaffUser').value.trim(),password=document.getElementById('naStaffPass').value,role=document.getElementById('naStaffRole').value,rawList=naRead('na_accounts',[]),list=Array.isArray(rawList)?rawList.filter(a=>a&&typeof a==='object'):[];if(!['teacher','admin'].includes(role)){naStatus('naStaffStatus','Only teacher or administrator accounts can be created here.');return}if(username.length<3){naStatus('naStaffStatus','Username must be at least 3 characters.');return}if(password.length<6){naStatus('naStaffStatus','Password must be at least 6 characters.');return}if(list.some(a=>String(a.username||'').toLowerCase()===username.toLowerCase())){naStatus('naStaffStatus','Username already exists.');return}const account={username,role,passwordHash:await naHash(password),createdAt:new Date().toISOString()};list.push(account);naWrite('na_accounts',list);syncQuizAccount(account,false);naStatus('naStaffStatus',role+' account created.');e.target.reset()});render();
 }
 function initQuizStudio(){
  const render=()=>{const qs=naRead('na_quizzes',[]),list=document.getElementById('naQuizList'),h=document.getElementById('naQuizHistory'),u=naUser(),panel=document.getElementById('naQuizCreatePanel');if(panel)panel.style.display=u&&['owner','admin','teacher'].includes(u.role)?'block':'none';if(list)list.innerHTML=qs.length?qs.map(q=>`<div class="profilebox"><strong>${esc(q.title)}</strong><div>${esc(q.question)}</div><div>By ${esc(q.author)}</div><button class="btn primary" data-na-take="${esc(q.id)}" type="button">Take quiz</button>${u&&['owner','admin','teacher'].includes(u.role)?`<button class="btn" data-na-delete="${esc(q.id)}" type="button">Delete quiz</button>`:''}</div>`).join(''):'No quizzes published yet.';const hist=naRead('na_quiz_history',[]);if(h)h.innerHTML=hist.length?hist.slice().reverse().map(x=>`<div class="profilebox"><strong>${esc(x.title)}</strong><div>${esc(x.user)} · ${x.score}% · ${esc(x.date)}</div></div>`).join(''):'No results yet.'};
@@ -1197,12 +1178,10 @@ $('#investigate').onclick=()=>{const s=$('#symptom').value;const answers={site:'
 // English / Central Kurdish shell toggle. Feature Lab includes bilingual labels and RTL layout.
 let kurdishMode=false;
 const shellTranslations=new Map([
-['SYSTEM READY','سیستەم ئامادەیە'],['PROJECT NEXUS · INTERACTIVE LAB','پرۆژەی نێکسەس · تاقیگەی کارلێک'],['Dashboard','داشبۆرد'],['Creator profile','پرۆفایلی دروستکەر'],['About the project','دەربارەی پرۆژە'],['Technology & credits','تەکنەلۆژیا و سوپاس'],['Development log','تۆماری پەرەپێدان'],['Networking lessons','وانەکانی تۆڕ'],['Cybersecurity basics','بنەماکانی پاراستنی سایبەری'],['DNS Explorer','گەڕۆکی DNS'],['Networking Academy','ئەکادیمیای تۆڕ'],['Cybersecurity Academy','ئەکادیمیای پاراستنی سایبەری'],['Linux & Terminal','لینوکس و تێرمیناڵ'],['Packet Journey','گەشتی پاکێت'],['Interactive Labs','تاقیگە کارلێککارەکان'],['Nexus Toolkit · 20 tools','کۆمەڵەئامرازی نێکسەس · ٢٠ ئامراز'],['Cyber Defense Center','ناوەندی بەرگریی سایبەری'],['Technical Architecture','پێکهاتەی تەکنیکی'],['Version History','مێژووی وەشانەکان'],['Quick menu','مێنیوی خێرا'],['Close menu','داخستنی مێنیو'],['SKIP INTRO','بازدان لە پێشەکی'],['CREATED BY','دروستکراوە لەلایەن'],['Inside the connected world','لەناو جیهانی پەیوەست'],['From names to addresses','لە ناوەوە بۆ ناونیشان'],['Think like a defender','وەک پارێزەر بیر بکەرەوە'],['Explore the command line','هێڵی فەرمان بگەڕێ'],['Understand the infrastructure','تێگەیشتن لە ژێرخان'],['Train your security thinking','بیرکردنەوەی پاراستنی خۆت ڕاهێنە'],['Quick menu','مێنیوی خێرا'],['Return to the lab overview','گەڕانەوە بۆ پوختەی تاقیگە'],['Create Profile / Log In','دروستکردنی پرۆفایل / چوونەژوورەوە'],['Account access and personal profile','دەستگەیشتن بە هەژمار و پرۆفایلی کەسی'],['Quiz Studio','ستۆدیای تاقیکردنەوە'],['Create, publish, and take quizzes','دروستکردن، بڵاوکردنەوە و ئەنجامدانی تاقیکردنەوە'],['Internet & Networking Hub','بەشی ئینتەرنێت و تۆڕ'],['Connections, protocols and performance','پەیوەندییەکان، پرۆتۆکۆڵەکان و کارایی'],['Cybersecurity Hub','بەشی پاراستنی سایبەری'],['Security foundations and defense','بنەماکانی پاراستن و بەرگری'],['Owner & Admin','خاوەن و بەڕێوەبەر'],['Creator control center preview','پێشبینینی ناوەندی کۆنترۆڵی دروستکەر'],['Creator profile','پرۆفایلی دروستکەر'],['About Muben','دەربارەی موبین'],['About the project','دەربارەی پرۆژەکە'],['Purpose and features','ئامانج و تایبەتمەندییەکان'],['Technology & credits','تەکنەلۆژیا و سوپاسنامەکان'],['What powers this website','ئەو تەکنەلۆژیایانەی ئەم ماڵپەڕە کارپێدەکەن'],['Development log','تۆماری پەرەپێدان'],['Project milestones','قۆناغەکانی پڕۆژە'],['Networking lessons','وانەکانی تۆڕ'],['Study core concepts','خوێندنی چەمکە سەرەکییەکان'],['Knowledge Arena','مەیدانی زانیاری'],['Language / زمان','زمان'],['Dashboard','داشبۆرد'],['Close menu','داخستنی مێنیو'],['Open menu','کردنەوەی مێنیو'],['Replay intro','دووبارە پیشاندانی پێشەکی'],['Search features…','گەڕان لە تایبەتمەندییەکان…'],['Learn more','زیاتر فێربە'],['Explore','بگەڕێ'],['Start','دەستپێبکە'],['Close','داخستن'],['Back','گەڕانەوە'],['Next','دواتر'],['Previous','پێشوو'],['Save','پاشەکەوتکردن'],['Cancel','هەڵوەشاندنەوە'],['Submit','ناردن'],['Create account','دروستکردنی هەژمار'],['Sign in','چوونەژوورەوە'],['Log in','چوونەژوورەوە'],['Log out','چوونەدەرەوە'],['Loading…','بارکردن…']
+['SYSTEM READY','سیستەم ئامادەیە'],['PROJECT NEXUS · INTERACTIVE LAB','پرۆژەی نێکسەس · تاقیگەی کارلێک'],['Dashboard','داشبۆرد'],['Creator profile','پرۆفایلی دروستکەر'],['About the project','دەربارەی پرۆژە'],['Technology & credits','تەکنەلۆژیا و سوپاس'],['Development log','تۆماری پەرەپێدان'],['Networking lessons','وانەکانی تۆڕ'],['Cybersecurity basics','بنەماکانی پاراستنی سایبەری'],['DNS Explorer','گەڕۆکی DNS'],['Networking Academy','ئەکادیمیای تۆڕ'],['Cybersecurity Academy','ئەکادیمیای پاراستنی سایبەری'],['Linux & Terminal','لینوکس و تێرمیناڵ'],['Packet Journey','گەشتی پاکێت'],['Interactive Labs','تاقیگە کارلێککارەکان'],['Nexus Toolkit · 20 tools','کۆمەڵەئامرازی نێکسەس · ٢٠ ئامراز'],['Cyber Defense Center','ناوەندی بەرگریی سایبەری'],['Technical Architecture','پێکهاتەی تەکنیکی'],['Version History','مێژووی وەشانەکان'],['Quick menu','مێنیوی خێرا'],['English Quiz','تاقیکردنەوە بە ئینگلیزی'],['Student Events & Updates','چالاکی و نوێکارییەکانی قوتابیان'],['Student Events & Notifications','چالاکی و ئاگادارکردنەوەکانی قوتابیان'],['Open quizzes in English','کردنەوەی تاقیکردنەوە بە ئینگلیزی'],['Quiz بە زمانی کوردی','تاقیکردنەوە بە کوردی'],['Close menu','داخستنی مێنیو'],['SKIP INTRO','بازدان لە پێشەکی'],['CREATED BY','دروستکراوە لەلایەن'],['Inside the connected world','لەناو جیهانی پەیوەست'],['From names to addresses','لە ناوەوە بۆ ناونیشان'],['Think like a defender','وەک پارێزەر بیر بکەرەوە'],['Explore the command line','هێڵی فەرمان بگەڕێ'],['Understand the infrastructure','تێگەیشتن لە ژێرخان'],['Train your security thinking','بیرکردنەوەی پاراستنی خۆت ڕاهێنە']
 ]);
-function syncLanguageButtons(){const label=kurdishMode?'کوردی / EN':'EN / کوردی';['languageToggle','dashboardLanguageToggle'].forEach(id=>{const b=$('#'+id);if(b)b.textContent=(id==='dashboardLanguageToggle'?'🌐 ':'')+label})}
-function setLanguage(){kurdishMode=!kurdishMode;document.documentElement.lang=kurdishMode?'ckb':'en';document.documentElement.dir=kurdishMode?'rtl':'ltr';document.body.classList.toggle('ku-mode',kurdishMode);syncLanguageButtons();document.querySelectorAll('[data-i18n]').forEach(el=>{if(el.dataset.enText===undefined)el.dataset.enText=el.textContent;const key=el.dataset.i18n;if(kurdishMode){const ku={hubKicker:'بەشی زیادە / ٥٠ تایبەتمەندی نوێ',hubTitle:'تاقیگەی تایبەتمەندییەکانی نێکسەس',hubIntro:'پەنجا ئامراز و وانەی زیادە بۆ تۆڕ، لینوکس، تەکنەلۆژیای وێب و پاراستنی سایبەری. بگەڕێ، جۆرێک هەڵبژێرە و کارتەکە بکەرەوە.'};el.textContent=ku[key]||el.dataset.enText}else el.textContent=el.dataset.enText});document.querySelectorAll('.menuitem span:nth-child(2)').forEach(el=>{if(!el.dataset.enHtml)el.dataset.enHtml=el.innerHTML;if(kurdishMode){let t=el.innerHTML;for(const [en,ku] of shellTranslations){t=t.replaceAll(en,ku)}el.innerHTML=t}else el.innerHTML=el.dataset.enHtml});document.querySelectorAll('.photo-copy strong,.photo-copy span,.photo-copy small,.topbar .pill,.intro-skip').forEach(el=>{if(!el.dataset.enText)el.dataset.enText=el.textContent;if(kurdishMode){let t=el.dataset.enText;for(const [en,ku] of shellTranslations)t=t.replaceAll(en,ku);el.textContent=t}else el.textContent=el.dataset.enText});// Translate common visible text nodes across static UI and dynamically rendered modules.
-const textWalker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const nodes=[];while(textWalker.nextNode()){const n=textWalker.currentNode,p=n.parentElement;if(!p||p.closest('script,style,textarea,input,select,option,code,pre,[contenteditable="true"],.technical-value,.mono'))continue;nodes.push(n)}for(const n of nodes){if(n.__naEnText===undefined)n.__naEnText=n.nodeValue;let value=n.__naEnText;if(kurdishMode){for(const [en,ku] of shellTranslations){if(value.includes(en))value=value.split(en).join(ku)}}n.nodeValue=value}document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(el=>{if(!el.dataset.naEnPlaceholder)el.dataset.naEnPlaceholder=el.placeholder;if(kurdishMode){let v=el.dataset.naEnPlaceholder;for(const [en,ku] of shellTranslations)if(v.includes(en))v=v.split(en).join(ku);el.placeholder=v}else el.placeholder=el.dataset.naEnPlaceholder});if(kurdishMode){const q=$('#featureSearch');if(q)q.placeholder='گەڕان لە تایبەتمەندییەکان…'}else{const q=$('#featureSearch');if(q)q.placeholder='Search features…'}}
-$('#languageToggle')?.addEventListener('click',setLanguage);$('#dashboardLanguageToggle')?.addEventListener('click',setLanguage);syncLanguageButtons();
+function setLanguage(){kurdishMode=!kurdishMode;document.documentElement.lang=kurdishMode?'ckb':'en';document.documentElement.dir=kurdishMode?'rtl':'ltr';document.body.classList.toggle('ku-mode',kurdishMode);$('#languageToggle').textContent=kurdishMode?'کوردی / EN':'EN / کوردی';document.querySelectorAll('[data-i18n]').forEach(el=>{if(el.dataset.enText===undefined)el.dataset.enText=el.textContent;const key=el.dataset.i18n;if(kurdishMode){const ku={hubKicker:'بەشی زیادە / ٥٠ تایبەتمەندی نوێ',hubTitle:'تاقیگەی تایبەتمەندییەکانی نێکسەس',hubIntro:'پەنجا ئامراز و وانەی زیادە بۆ تۆڕ، لینوکس، تەکنەلۆژیای وێب و پاراستنی سایبەری. بگەڕێ، جۆرێک هەڵبژێرە و کارتەکە بکەرەوە.'};el.textContent=ku[key]||el.dataset.enText}else el.textContent=el.dataset.enText});document.querySelectorAll('.menuitem span:nth-child(2)').forEach(el=>{if(!el.dataset.enHtml)el.dataset.enHtml=el.innerHTML;if(kurdishMode){let t=el.innerHTML;for(const [en,ku] of shellTranslations){t=t.replaceAll(en,ku)}el.innerHTML=t}else el.innerHTML=el.dataset.enHtml});document.querySelectorAll('.photo-copy strong,.photo-copy span,.photo-copy small,.topbar .pill,.intro-skip').forEach(el=>{if(!el.dataset.enText)el.dataset.enText=el.textContent;if(kurdishMode){let t=el.dataset.enText;for(const [en,ku] of shellTranslations)t=t.replaceAll(en,ku);el.textContent=t}else el.textContent=el.dataset.enText});if(kurdishMode){const q=$('#featureSearch');if(q)q.placeholder='گەڕان لە تایبەتمەندییەکان…'}else{const q=$('#featureSearch');if(q)q.placeholder='Search features…'}}
+$('#languageToggle').addEventListener('click',setLanguage);
 
 </script>
 
@@ -1237,6 +1216,58 @@ document.addEventListener('input',e=>{if(e.target.id==='glossarySearch')renderAc
 document.addEventListener('click',e=>{const b=e.target.closest('[data-local-quiz]');if(!b)return;const root=document.getElementById('localQuiz-'+b.dataset.localQuiz);if(!root)return;root.textContent=b.dataset.answer==='right'?'Correct. Verify through a known official channel; never send a one-time code in response to an unexpected message.':'Not safe. One-time codes are sensitive. Pause and verify using the official service separately.';root.style.color=b.dataset.answer==='right'?'#8dffb4':'#ffd18a'});
 
 </script>
+
+<!-- NEXUS AI: floating assistant. Real AI activates after configuring the backend endpoint below. -->
+<button id="nexusAiLauncher" type="button" aria-controls="nexusAiWidget" aria-expanded="false" aria-label="Open NEXUS AI learning assistant"><span class="nexus-ai-orb" aria-hidden="true">✧</span><span>ASK NEXUS AI</span></button>
+<section id="nexusAiWidget" role="dialog" aria-modal="false" aria-labelledby="nexusAiHeading" aria-hidden="true">
+  <header class="nexus-ai-head"><div class="nexus-ai-logo" aria-hidden="true">✧</div><div><div id="nexusAiHeading" class="nexus-ai-title">NEXUS AI</div><div class="nexus-ai-subtitle">NETWORK ACADEMY / LEARNING ASSISTANT</div><div id="nexusAiConnection" class="nexus-ai-status">Backend not connected</div></div><button id="nexusAiClose" class="nexus-ai-close" type="button" aria-label="Close NEXUS AI">×</button></header>
+  <div class="nexus-ai-disclaimer">Learning support for networking, Linux, programming, and defensive cybersecurity. NEXUS AI teaches concepts and gives hints; it will not intentionally provide direct answers for a live or graded exam. Never enter passwords, private information, or API keys.</div>
+  <div id="nexusAiMessages" class="nexus-ai-messages" aria-live="polite">
+    <div class="nexus-ai-welcome"><h3>Ask. Explore. Understand.</h3><p>Ask a question, request a simpler explanation, or practise a topic from Network Academy.</p><div class="nexus-ai-suggestions"><button type="button" data-nexus-prompt="Explain DNS step by step with a real-world example.">Explain DNS</button><button type="button" data-nexus-prompt="Teach me how IP addresses and subnets work, starting from beginner level.">IP addresses</button><button type="button" data-nexus-prompt="Give me a safe beginner cybersecurity scenario and teach me how to defend against it.">Cyber safety</button><button type="button" data-nexus-prompt="Help me study for a quiz with a hint-first practice question. Do not give me an answer key.">Quiz practice</button></div></div>
+  </div>
+  <div class="nexus-ai-composer"><form id="nexusAiForm" class="nexus-ai-form"><textarea id="nexusAiInput" maxlength="2000" rows="2" aria-label="Ask NEXUS AI a question" placeholder="Ask a networking question…"></textarea><button id="nexusAiSend" class="nexus-ai-send" type="submit" aria-label="Send question">➤</button></form><div class="nexus-ai-footnote">AI answers can be wrong. Verify important information. Real AI requires the secure backend setup described in the included guide.</div></div>
+</section>
+<script>
+(()=>{
+  // Set this to your deployed backend URL, e.g. https://nexus-ai.YOUR-SUBDOMAIN.workers.dev/api/ask
+  // Never place your OpenAI API key in this file.
+  const NEXUS_AI_API_URL = "https://YOUR-WORKER-SUBDOMAIN.workers.dev/api/ask";
+  const launcher=document.getElementById('nexusAiLauncher');
+  const panel=document.getElementById('nexusAiWidget');
+  const close=document.getElementById('nexusAiClose');
+  const form=document.getElementById('nexusAiForm');
+  const input=document.getElementById('nexusAiInput');
+  const send=document.getElementById('nexusAiSend');
+  const messagesEl=document.getElementById('nexusAiMessages');
+  const connection=document.getElementById('nexusAiConnection');
+  const history=[];
+  let pending=false;
+  const configured=()=>!NEXUS_AI_API_URL.includes('YOUR-WORKER-SUBDOMAIN');
+  connection.textContent=configured()?'Backend endpoint configured':'Setup required · backend URL missing';
+  function open(){panel.classList.add('open');panel.setAttribute('aria-hidden','false');launcher.setAttribute('aria-expanded','true');input.focus()}
+  function shut(){panel.classList.remove('open');panel.setAttribute('aria-hidden','true');launcher.setAttribute('aria-expanded','false');launcher.focus()}
+  function addMessage(role,text,extra=''){const el=document.createElement('div');el.className='nexus-ai-message '+role+(extra?' '+extra:'');el.textContent=text;messagesEl.appendChild(el);messagesEl.scrollTop=messagesEl.scrollHeight;return el}
+  function setBusy(value){pending=value;send.disabled=value;input.disabled=value;send.textContent=value?'…':'➤'}
+  launcher.addEventListener('click',()=>panel.classList.contains('open')?shut():open());close.addEventListener('click',shut);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('open'))shut()});
+  messagesEl.addEventListener('click',e=>{const b=e.target.closest('[data-nexus-prompt]');if(!b)return;input.value=b.dataset.nexusPrompt;input.focus()});
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();if(pending)return;const question=input.value.trim();if(!question)return;
+    addMessage('user',question);input.value='';
+    if(!configured()){addMessage('assistant','Real AI is not connected in this preview yet. The backend URL is still a placeholder. Deploy the Worker, add the API key as a server-side secret, then replace NEXUS_AI_API_URL with the deployed /api/ask URL. No fake AI answer has been generated.','error');return}
+    history.push({role:'user',content:question});const recent=history.slice(-8);const typing=addMessage('assistant','NEXUS AI is thinking…','nexus-ai-typing');setBusy(true);
+    try{
+      const response=await fetch(NEXUS_AI_API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:recent})});
+      let data={};try{data=await response.json()}catch(_){throw new Error('The backend returned an unreadable response. Check the Worker URL and deployment logs.')}
+      if(!response.ok)throw new Error(data.error||`Request failed (${response.status}).`);
+      if(typeof data.answer!=='string'||!data.answer.trim())throw new Error('The AI returned an empty answer. Please try again.');
+      typing.remove();addMessage('assistant',data.answer);history.push({role:'assistant',content:data.answer});connection.textContent='AI service connected';
+    }catch(err){typing.remove();addMessage('assistant',`Couldn't reach NEXUS AI: ${err.message||'network error'}. Check your connection and backend configuration.`, 'error');history.pop();}
+    finally{setBusy(false);input.focus()}
+  });
+})();
+</script>
+
 
 <style id="na-account-quiz-styles">
 .na-extra-panel{margin-top:18px;padding:18px;border:1px solid #2b4055;border-radius:16px;background:linear-gradient(145deg,rgba(16,34,51,.96),rgba(7,17,28,.96));color:var(--text,#e7f0f8)}
@@ -1277,108 +1308,436 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 
 
-<style id="nexus-guard-style">
-#na-guard-launcher{position:fixed;right:16px;bottom:16px;z-index:10001;display:flex;gap:8px;align-items:center}
-#na-guard-launcher button{border:1px solid #35516a;background:#0b1b2b;color:#eaf8ff;border-radius:13px;padding:10px 13px;box-shadow:0 8px 28px #0008;font-weight:750;font-size:12px;min-height:43px}
-#na-guard-launcher .na-bell{background:linear-gradient(120deg,#123a42,#142849);border-color:#347e7a}
-#na-guard-count{display:inline-grid;place-items:center;min-width:19px;height:19px;padding:0 4px;border-radius:20px;background:#ff8a55;color:#160c08;font-size:10px;margin-left:5px}
-#na-guard-panel{position:fixed;z-index:10002;right:14px;bottom:70px;width:min(470px,calc(100vw - 28px));max-height:min(76dvh,720px);overflow:hidden;display:none;flex-direction:column;border:1px solid #34516a;border-radius:18px;background:#081522;color:#eaf5ff;box-shadow:0 25px 90px #000b;font:13px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-#na-guard-panel.open{display:flex}
-#na-guard-panel *{box-sizing:border-box}
-.na-g-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 16px;border-bottom:1px solid #233b50;background:linear-gradient(110deg,#102a3b,#141a35)}
-.na-g-head strong{font-size:14px;letter-spacing:.04em}.na-g-head small{display:block;color:#9bb4c9;font-size:10px}
-.na-g-close,.na-g-btn{border:1px solid #34516a;background:#11273a;color:#eaf5ff;border-radius:9px;padding:8px 10px;cursor:pointer}
-.na-g-tabs{display:flex;gap:7px;padding:10px 12px;border-bottom:1px solid #20384d;flex-wrap:wrap}
-.na-g-tabs button[aria-selected="true"]{border-color:#53e7c0;color:#8fffe0;background:#102e32}
-.na-g-content{padding:13px;overflow:auto;overscroll-behavior:contain}
-.na-g-status{padding:11px;border:1px solid #285b4d;background:#0b2524;border-radius:12px;margin-bottom:10px}
-.na-g-status strong{color:#8fffe0}.na-g-muted{color:#9bb0c5;font-size:11px}
-.na-g-actions{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
-.na-g-list{display:grid;gap:8px}.na-g-item{border:1px solid #243d53;background:#0b1b2a;border-radius:11px;padding:10px}.na-g-item strong{display:block;font-size:12px}.na-g-item p{margin:4px 0 0;color:#afc2d3;font-size:11px;overflow-wrap:anywhere}.na-g-item.warn{border-color:#75572c}.na-g-item.error{border-color:#7a3b4a}.na-g-empty{padding:18px;text-align:center;border:1px dashed #304b61;border-radius:12px;color:#9bb0c5}
-.na-g-badge{display:inline-block;padding:3px 7px;border-radius:20px;font-size:9px;margin-right:6px;background:#183d3a;color:#9bffe5}.na-g-badge.warn{background:#3b2c16;color:#ffdda0}.na-g-badge.error{background:#3b1921;color:#ffc0ca}
-@media(max-width:520px){#na-guard-launcher{right:10px;bottom:10px;gap:6px}#na-guard-launcher button{padding:9px 10px;font-size:11px}#na-guard-panel{right:8px;bottom:62px;width:calc(100vw - 16px);max-height:78dvh}.na-g-head{padding:12px}.na-g-content{padding:10px}}
-@media(prefers-reduced-motion:reduce){#na-guard-panel{scroll-behavior:auto}}
-</style>
+<style id="network-academy-responsive-ui-polish">
+/* Responsive UI polish: mobile-first spacing, readable controls, and a clearer Quick Menu. */
+:root{--ui-glow:rgba(112,245,220,.14);--ui-border:rgba(150,190,225,.17)}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{min-width:320px;overflow-x:hidden}
+button,input,select,textarea{font:inherit}
+button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+img,svg,canvas,video{max-width:100%}
+.main,.card,.grid,.hero,.module-content,.academy-page,.atlas-shell{min-width:0}
+.topbar{gap:10px}
+.topright{min-width:0;flex-wrap:nowrap}
+.topright .btn,.topright .iconbtn,.lang-toggle{white-space:nowrap}
+.btn,.iconbtn,.lang-toggle,.menuitem{min-height:42px}
+.card,.photo-card,.lesson,.security-item,.atlas-card{transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.card:hover{border-color:#6debd34a}
+.drawer{width:min(410px,100vw);max-width:100%;background:linear-gradient(165deg,#101b30 0%,#08111e 58%,#091b24 100%);border-left:1px solid #7cf5de30;box-shadow:-24px 0 80px #0009;overscroll-behavior:contain}
+.drawerhead{position:sticky;top:0;z-index:2;background:#0b1425f2;backdrop-filter:blur(16px);padding:17px 18px;border-bottom:1px solid #ffffff12}
+.drawerhead strong{display:block;font-size:19px;letter-spacing:-.025em;margin-top:3px}
+.drawerbody{padding:14px 13px 20px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#315c68 transparent}
+.quick-profile-card{display:flex;align-items:center;gap:12px;padding:14px;margin:0 0 14px;border:1px solid #72efd32a;border-radius:16px;background:radial-gradient(circle at 0 0,#52e5c21b,transparent 55%),linear-gradient(135deg,#111d32,#0a1724);box-shadow:inset 0 1px #ffffff08}
+.quick-avatar{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border-radius:14px;color:#07131c;font-size:23px;font-weight:900;background:linear-gradient(135deg,#83f6df,#8e9cff 62%,#d2a2ff);box-shadow:0 0 26px #7ef8df22}
+.quick-profile-copy{min-width:0;display:flex;flex-direction:column;gap:3px}
+.quick-profile-copy strong{font-size:10px;letter-spacing:.14em;color:#85f8df}
+.quick-profile-copy span{font-size:13px;font-weight:750;color:#f1f6ff}
+.quick-profile-copy small{font-size:10px;line-height:1.45;color:#91a8bf}
+.menu-section-label{margin:18px 8px 7px;padding-top:12px;border-top:1px solid #ffffff12;color:#7f9cb7;font-size:9px;letter-spacing:.17em;font-weight:850;text-transform:uppercase}
+.menuitem{position:relative;display:flex;align-items:center;gap:12px;width:100%;min-height:52px;margin:4px 0;padding:10px 11px;border:1px solid transparent;border-radius:12px;background:transparent;text-align:left;transition:background .18s ease,border-color .18s ease,transform .18s ease}
+.menuitem>span:first-child{flex:0 0 34px;width:34px;height:34px;display:grid;place-items:center;border:1px solid #7debd51e;border-radius:10px;background:#72e8d30c;color:#8af8e1;font-size:17px}
+.menuitem>span:nth-child(2){min-width:0;font-size:12px;font-weight:700;line-height:1.35}
+.menuitem small{margin-top:3px;font-size:10px;line-height:1.4;color:#91a8bf;font-weight:450}
+.menuitem:hover,.menuitem:focus-visible,.menuitem.active{outline:none;background:linear-gradient(100deg,#173747b8,#1a2140a8);border-color:#69e9d13b;transform:translateX(-2px);color:#fff}
+.menuitem:hover>span:first-child,.menuitem.active>span:first-child{background:#4fe4c51a;border-color:#7cf5de5c;box-shadow:0 0 18px #56e9cf10}
+.drawerfoot{background:#08111ed9;backdrop-filter:blur(10px);padding:13px 16px;line-height:1.6}
+.module-overlay{padding:clamp(0px,2vw,20px);padding-bottom:env(safe-area-inset-bottom)}
+.module-window{width:min(1160px,100%);max-height:100dvh;min-height:0}
+.module-content{overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.module-content input,.module-content select,.module-content textarea,.atlas-controls input,.atlas-controls select{max-width:100%;min-width:0}
+:focus-visible{outline:2px solid #79f4dc;outline-offset:3px}
+@media(max-width:850px){
+ .topbar{height:auto;min-height:62px;padding:9px 12px;align-items:center;gap:8px}
+ .brand{gap:8px;min-width:0}.brand .mark{width:35px;height:35px;flex:0 0 35px}.brand strong{font-size:11px;letter-spacing:.07em}.brand small{font-size:8px;letter-spacing:.09em}
+ .topright{gap:6px;justify-content:flex-end}
+ .topright .pill,#timeSpentPill,.topright #topCreateProfile,.topright #topLogin,.topright #topQuiz,.topright .intro-replay,.topright #languageToggle{display:none!important}
+ #openMenu{min-width:43px;min-height:43px;padding:8px 10px;background:linear-gradient(135deg,#14333c,#171c39);border-color:#65ffd044;box-shadow:0 0 20px #65ffd010}
+ .main{padding:18px 12px 28px}
+ .hero{gap:14px;margin:6px 0 19px}.hero h1{font-size:clamp(27px,7vw,39px)}.hero p{font-size:13px;line-height:1.7}
+ .hero-visual{max-width:100%;overflow:hidden}.grid{gap:11px}.card{padding:14px;border-radius:15px}
+ .statrow{gap:8px}.statrow>*{min-width:0}.hero-actions .btn{flex:1 1 auto}
+ .module-overlay{align-items:stretch}.module-window{width:100%;height:100dvh;height:100svh;max-height:none;border-radius:0;border-left:0;border-right:0}
+ .module-topbar{padding:10px 12px;gap:8px}.module-topbar .module-label{font-size:9px;letter-spacing:.09em}.module-close-hint{font-size:9px;max-width:48vw;line-height:1.4}.module-topbar .module-actions{gap:6px}.module-topbar .btn{padding:8px 10px;font-size:11px;min-height:40px}.module-topbar .iconbtn{min-width:40px;min-height:40px}
+ .module-cover{height:clamp(175px,27svh,235px);min-height:175px}.module-cover-copy{left:16px;right:14px;bottom:18px}.module-cover-copy h2{font-size:clamp(24px,7vw,34px)}.module-cover-copy p{font-size:12px}
+ .module-content{padding:15px 12px calc(22px + env(safe-area-inset-bottom))}
+ .module-gallery,.photo-strip{grid-template-columns:1fr}.photo-card{min-height:165px}.module-gallery img{height:170px}
+ .atlas-controls{grid-template-columns:minmax(0,1fr)}.atlas-controls input{grid-column:auto}.atlas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:540px){
+ .brand strong{font-size:10px}.brand small{font-size:7px;letter-spacing:.06em}.topbar{padding-left:9px;padding-right:9px}
+ .hero h1{font-size:29px;line-height:1.1}.hero-visual{min-height:230px}.orbit-label{max-width:118px}.orbit-label span{font-size:8px}
+ .statrow{grid-template-columns:repeat(2,minmax(0,1fr))}.security-grid,.lesson-grid,.atlas-grid{grid-template-columns:minmax(0,1fr)}
+ .drawer{width:100vw;border-radius:0}.drawerbody{padding:12px 11px calc(18px + env(safe-area-inset-bottom))}.quick-profile-card{padding:12px}.menuitem{min-height:54px;padding:10px}.menuitem>span:nth-child(2){font-size:12px}
+ .module-close-hint{display:none}.module-topbar{padding:9px}.module-cover{height:195px;min-height:195px}.module-content{padding-left:11px;padding-right:11px}
+ .module-content .grid,.module-content .row,.module-content .form-row{min-width:0;max-width:100%}.module-content table{display:block;max-width:100%;overflow-x:auto}
+ input,select,textarea{font-size:16px!important} /* prevents mobile browser auto-zoom on focus */
+ .btn{max-width:100%;white-space:normal}.footer{padding-left:12px;padding-right:12px}
+}
+@media(hover:none){.btn:hover,.iconbtn:hover,.menuitem:hover{transform:none;filter:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.photo-card,.lesson,.security-item,.atlas-card,.menuitem{transition:none}}
 
-<div id="na-guard-launcher" aria-label="Network Academy tools">
-  <button type="button" class="na-bell" id="na-notice-open" aria-haspopup="dialog" aria-controls="na-guard-panel">♢ Notifications <span id="na-guard-count" aria-label="Unread notifications">2</span></button>
-  <button type="button" id="na-bug-open" aria-haspopup="dialog" aria-controls="na-guard-panel" hidden>⬡ NEXUS GUARD</button>
-</div>
-<section id="na-guard-panel" role="dialog" aria-modal="false" aria-labelledby="na-guard-title" aria-hidden="true">
-  <div class="na-g-head"><div><strong id="na-guard-title">NEXUS GUARD / SYSTEM CENTER</strong><small>Notifications · Browser diagnostics · Local alerts</small></div><button type="button" class="na-g-close" id="na-guard-close" aria-label="Close panel">✕</button></div>
-  <div class="na-g-tabs" role="tablist" aria-label="System center tabs">
-    <button type="button" class="na-g-btn" data-na-tab="notices" role="tab" aria-selected="true">Notifications</button>
-    <button type="button" class="na-g-btn" data-na-tab="guard" role="tab" aria-selected="false" hidden>Bug finder</button>
-    <button type="button" class="na-g-btn" data-na-tab="security" role="tab" aria-selected="false" hidden>Security</button>
-  </div>
-  <div class="na-g-content" id="na-guard-content" tabindex="0"></div>
-</section>
-<script id="nexus-guard-script">
-(()=>{'use strict';
- const $=id=>document.getElementById(id), STORE='na_nexus_guard_v1', PANEL=$('na-guard-panel'), SESSION='na_session_local_v1';
- if(!PANEL||PANEL.dataset.ready)return; PANEL.dataset.ready='1';
- let activeTab='notices', scanIssues=[], runtimeIssues=[];
- const currentSession=()=>{try{return JSON.parse(localStorage.getItem(SESSION)||'null')}catch{return null}};
- const isOwner=()=>currentSession()?.role==='owner';
- function syncRoleUI(){const owner=isOwner(),bug=$('na-bug-open');if(bug)bug.hidden=!owner;document.querySelectorAll('[data-na-tab="guard"],[data-na-tab="security"]').forEach(b=>b.hidden=!owner);if(!owner&&activeTab!=='notices'){activeTab='notices';close();}}
- const now=()=>new Date().toISOString();
- const read=(key,fallback)=>{try{const v=JSON.parse(localStorage.getItem(key));return v??fallback}catch{return fallback}};
- const write=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value));return true}catch{return false}};
- let state=read(STORE,null);
- if(!state||state.version!==1){state={version:1,items:[
-  {id:'welcome-'+Date.now(),title:'Welcome to Network Academy',body:'Explore the learning modules and check here for quiz announcements and academy updates.',kind:'good',audience:'all',at:now(),read:false},
-  {id:'limits-'+Date.now(),title:'NEXUS GUARD initialized',body:'Owner-only diagnostic tools are available after signing in with the owner account.',kind:'warn',audience:'owner',at:now(),read:false}
- ]};write(STORE,state)}
- const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const fmt=v=>{try{return new Date(v).toLocaleString()}catch{return v}};
- const unread=()=>state.items.filter(n=>!n.read).length;
- function save(){state.items=state.items.slice(-100);write(STORE,state);updateCount()}
- function updateCount(){const el=$('na-guard-count');const count=visibleNotices().filter(n=>!n.read).length;if(el){el.textContent=count;el.style.display=count?'inline-grid':'none';el.setAttribute('aria-label',count+' unread notifications')}}
- function addNotice(title,body,kind='warn',audience='all'){const id='n-'+Date.now()+'-'+Math.random().toString(16).slice(2,7);state.items.push({id,title,body,kind,audience,at:now(),read:false});save();if(activeTab==='notices'&&PANEL.classList.contains('open'))render();}
- function visibleNotices(){const owner=isOwner();return state.items.filter(n=>owner||((n.audience||'all')==='all'&&(/quiz|welcome|academy update|announcement/i.test((n.title||'')+' '+(n.body||''))&&!/bug|runtime|security|scan|ddos|firewall|error|diagnostic/i.test((n.title||'')+' '+(n.body||'')))))}
- function open(tab){syncRoleUI();if(!isOwner()&&tab&&tab!=='notices')tab='notices';activeTab=tab||activeTab;PANEL.classList.add('open');PANEL.setAttribute('aria-hidden','false');document.querySelectorAll('[data-na-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.naTab===activeTab)));render()}
- function close(){PANEL.classList.remove('open');PANEL.setAttribute('aria-hidden','true')}
- function runScan(){scanIssues=[];const ids=new Map();document.querySelectorAll('[id]').forEach(el=>{const id=el.id;ids.set(id,(ids.get(id)||0)+1)});ids.forEach((n,id)=>{if(n>1)scanIssues.push({kind:'error',title:'Duplicate element ID',body:`ID "${id}" appears ${n} times. This can confuse scripts and accessibility references.`})});
- document.querySelectorAll('img').forEach((img,i)=>{if(img.complete&&img.naturalWidth===0&&img.getAttribute('src'))scanIssues.push({kind:'warn',title:'Image may not load',body:`Image ${i+1}: ${img.getAttribute('src').slice(0,180)}`})});
- document.querySelectorAll('a[href=""],a:not([href])').forEach((a,i)=>scanIssues.push({kind:'warn',title:'Link has no destination',body:`Link ${i+1}: ${(a.textContent||'unnamed link').trim().slice(0,100)}` }));
- document.querySelectorAll('button').forEach((b,i)=>{if(!b.disabled&&!b.getAttribute('aria-label')&&!b.title&&!b.textContent.trim()&&!b.querySelector('svg[aria-label],img[alt]'))scanIssues.push({kind:'warn',title:'Button may need an accessible name',body:`Button ${i+1} has no readable text or accessible label.`})});
- document.querySelectorAll('a[href^="#"]').forEach((a,i)=>{const target=a.getAttribute('href').slice(1);if(target&&!document.getElementById(target))scanIssues.push({kind:'warn',title:'Link target not found',body:`Link ${i+1} points to missing #${target}.`})});
- document.querySelectorAll('input:not([type="hidden"]),select,textarea').forEach((el,i)=>{if(!el.labels?.length&&!el.getAttribute('aria-label')&&!el.getAttribute('aria-labelledby'))scanIssues.push({kind:'warn',title:'Form field may need a label',body:`Field ${i+1}${el.id?' (#'+el.id+')':''} has no associated label or accessible name.`})});
- document.querySelectorAll('img').forEach((img,i)=>{if(!img.hasAttribute('alt'))scanIssues.push({kind:'warn',title:'Image missing alternative text',body:`Image ${i+1} has no alt attribute.`})});
- const doc=document.documentElement, body=document.body; if(doc&&body&&doc.scrollWidth>doc.clientWidth+2)scanIssues.push({kind:'warn',title:'Possible horizontal page overflow',body:`Document width ${doc.scrollWidth}px exceeds viewport width ${doc.clientWidth}px. Check the layout at the current screen size.`});
- document.querySelectorAll('form').forEach((f,i)=>{if(!f.querySelector('button[type="submit"],input[type="submit"]'))scanIssues.push({kind:'warn',title:'Form may have no submit control',body:`Form ${i+1} has no explicit submit button. Confirm it can be submitted by keyboard or another intended control.`})});
- const issues=[...runtimeIssues,...scanIssues];const critical=issues.filter(x=>x.kind==='error').length;addNotice('NEXUS GUARD scan completed',`${issues.length} potential issue(s) found (${critical} high-priority structural/runtime issue(s)). Review the Bug finder tab.`,issues.length?'warn':'good');return issues}
- window.addEventListener('error',e=>{const issue={kind:'error',title:'JavaScript runtime error',body:`${e.message||'Unknown script error'}${e.filename?' · '+e.filename.split('/').pop():''}${e.lineno?':'+e.lineno:''}`,at:now()};runtimeIssues.push(issue);runtimeIssues=runtimeIssues.slice(-30);addNotice('Browser error detected',issue.body,'error')});
- window.addEventListener('unhandledrejection',e=>{const reason=e.reason;const issue={kind:'error',title:'Unhandled promise rejection',body:String(reason?.message||reason||'Promise rejected'),at:now()};runtimeIssues.push(issue);runtimeIssues=runtimeIssues.slice(-30);addNotice('Async error detected',issue.body,'error')});
- function listIssues(items){if(!items.length)return '<div class="na-g-empty">No issues detected by the checks run so far. This is not proof that every feature works.</div>';return '<div class="na-g-list">'+items.slice(0,80).map(x=>`<article class="na-g-item ${esc(x.kind)}"><strong><span class="na-g-badge ${esc(x.kind)}">${x.kind==='error'?'HIGH':x.kind==='warn'?'CHECK':'OK'}</span>${esc(x.title)}</strong><p>${esc(x.body)}</p>${x.at?`<p class="na-g-muted">${esc(fmt(x.at))}</p>`:''}</article>`).join('')+'</div>'}
- function render(){const host=$('na-guard-content');if(!host)return;document.querySelectorAll('[data-na-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.naTab===activeTab)));
- if(activeTab==='notices'){const notices=visibleNotices();const unreadVisible=notices.filter(n=>!n.read).length;host.innerHTML=`<div class="na-g-status"><strong>Notification Center</strong><div class="na-g-muted">${unreadVisible} unread · saved in this browser only</div></div><div class="na-g-actions"><button class="na-g-btn" id="na-mark-read">Mark all read</button><button class="na-g-btn" id="na-clear-notices">Clear notifications</button></div>${notices.length?'<div class="na-g-list">'+[...notices].reverse().map(n=>`<article class="na-g-item ${esc(n.kind)}"><strong><span class="na-g-badge ${esc(n.kind)}">${n.kind==='error'?'ERROR':n.kind==='warn'?'NOTICE':'INFO'}</span>${esc(n.title)} ${n.read?'':'<span class="na-g-muted">· NEW</span>'}</strong><p>${esc(n.body)}</p><p class="na-g-muted">${esc(fmt(n.at))}</p></article>`).join('')+'</div>':'<div class="na-g-empty">You are all caught up.</div>'}`;
- $('na-mark-read').onclick=()=>{const ids=new Set(notices.map(n=>n.id));state.items.forEach(n=>{if(ids.has(n.id))n.read=true});save();render()};$('na-clear-notices').onclick=()=>{const ids=new Set(notices.map(n=>n.id));state.items=state.items.filter(n=>!ids.has(n.id));save();render()};
- }else if(activeTab==='guard'){if(!isOwner()){activeTab='notices';render();return}host.innerHTML=`<div class="na-g-status"><strong>Browser bug finder</strong><div class="na-g-muted">Checks duplicate IDs, unloaded images, missing link targets, empty links, labels, image alt text, form submit controls, mobile horizontal overflow, and basic button names. Runtime errors are collected while this page is open.</div></div><div class="na-g-actions"><button class="na-g-btn" id="na-run-scan">▶ Run checks</button><button class="na-g-btn" id="na-clear-issues">Clear captured runtime errors</button></div><div class="na-g-muted" style="margin:8px 0 12px">Last scan results: ${scanIssues.length} structural issue(s) · ${runtimeIssues.length} runtime error(s) captured</div>${listIssues([...runtimeIssues,...scanIssues])}<p class="na-g-muted">This is a lightweight owner-only client-side checker, not a full automated test suite. It cannot inspect server logs, prove every button works, or guarantee every bug is found. The owner gate is browser-side only; secure enforcement requires a trusted backend.</p>`;$('na-run-scan').onclick=()=>{runScan();render()};$('na-clear-issues').onclick=()=>{runtimeIssues=[];scanIssues=[];render()};
- }else{if(!isOwner()){activeTab='notices';render();return}host.innerHTML=`<div class="na-g-status"><strong>Security posture · browser-only</strong><div class="na-g-muted">This static page cannot act as a network firewall, block DDoS traffic, or secure accounts by itself.</div></div><div class="na-g-list"><article class="na-g-item"><strong>HTTPS</strong><p>Use the published HTTPS GitHub Pages URL. Avoid entering secrets into demo forms.</p></article><article class="na-g-item"><strong>DDoS protection</strong><p>Traffic filtering must be handled by hosting/CDN/DNS/network infrastructure. A browser script cannot stop requests before they reach the host.</p></article><article class="na-g-item"><strong>Accounts and owner alerts</strong><p>Local browser storage is not shared across devices and is not secure authentication. Cross-device notifications and real owner-only reports require a trusted backend with access rules.</p></article><article class="na-g-item"><strong>Page checks</strong><p>Use the Bug finder tab to run lightweight DOM checks and review JavaScript errors captured in this browser session.</p></article></div>`}}
- $('na-notice-open').addEventListener('click',()=>open('notices'));$('na-bug-open').addEventListener('click',()=>{if(isOwner())open('guard')});$('na-guard-close').addEventListener('click',close);document.querySelectorAll('[data-na-tab]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.naTab)));document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
- // Refresh the visible controls after local sign-in, registration, or logout actions.
- document.addEventListener('click',e=>{if(e.target.closest('#naLoginBtn,#naRegisterBtn,#naLogoutBtn'))setTimeout(()=>{syncRoleUI();updateCount()},50)});
- window.addEventListener('storage',e=>{if(e.key===SESSION){syncRoleUI();updateCount()}});
- syncRoleUI();updateCount();
- // Wait until layout settles before the first scan, so late-rendered modules are included.
- window.addEventListener('load',()=>{setTimeout(()=>{if(!scanIssues.length)runScan()},800)},{once:true});
+/* NEXUS NEON REVAMP — richer color, depth, and a more useful Quick Menu */
+:root{--bg:#070817;--panel:#101229;--panel2:#171a36;--line:#34345a;--text:#f5f4ff;--muted:#a8accb;--cyan:#61f4e2;--blue:#69b8ff;--purple:#b99aff;--amber:#ffd17b;--pink:#ff83c8;--green:#82f7b5}
+body{background:radial-gradient(ellipse at 8% 0%,#512b7b55,transparent 34%),radial-gradient(ellipse at 92% 12%,#075c7750,transparent 34%),radial-gradient(ellipse at 55% 80%,#29205233,transparent 42%),#070817}
+.topbar{background:linear-gradient(100deg,#0a0d20f5,#10152af2 55%,#11102af5);border-bottom-color:#8e7dff38;box-shadow:0 8px 30px #03040d55}
+.mark{background:linear-gradient(135deg,#67f5e4,#7abaff 48%,#d1a1ff);box-shadow:0 0 28px #a58aff44}
+.eyebrow{color:#a99aff}.pill{color:#79f8e6;background:#102c36;border-color:#367b86}
+.btn.primary{background:linear-gradient(110deg,#5d36bd,#176f9f 56%,#087d79);border-color:#9b87ff;box-shadow:0 7px 24px #6946c333}
+.card{background:linear-gradient(145deg,#14172ff2,#0c1225f5 68%,#17112bf0);border-color:#34385d;box-shadow:0 14px 40px #02030b40}
+.card::after{background:linear-gradient(130deg,#b59aff0b,transparent 38%,#5ef2e50a)}
+.card:hover{border-color:#9b8bff88;box-shadow:0 16px 42px #4c35a522}
+.stat{background:linear-gradient(145deg,#141a32,#0b1428);border-color:#34365d}.stat em{color:#7af5e5}
+.network-wrap{background:radial-gradient(ellipse at 50% 35%,#173f5d,#11132d 70%);border-color:#5e58a0}
+.feature,.lesson,.security-item{background:linear-gradient(135deg,#151a33,#0d1729);border-color:#34385d}
+.feature:hover{border-color:#a58aff88;background:linear-gradient(110deg,#28204a,#12313c)}
+.drawer{width:min(430px,100vw);background:radial-gradient(ellipse at 100% 0%,#53308055,transparent 38%),radial-gradient(ellipse at 0% 35%,#075c6850,transparent 35%),linear-gradient(160deg,#11152d,#090d1d 72%,#111027);border-left:1px solid #9d8aff6b;box-shadow:-28px 0 100px #02030bd9}
+.drawerback{background:#02030bd9;backdrop-filter:blur(5px)}
+.drawerhead{background:#0b0d20eF;border-bottom:1px solid #9a87ff35}
+.drawerhead .eyebrow{color:#8cf7e8}
+.drawerhead strong{font-size:21px;letter-spacing:-.04em}
+#closeMenu{border-color:#7165a6;background:#1a1937;color:#fff;border-radius:13px}
+.drawerbody{padding:14px 14px 24px;scrollbar-color:#7664c9 transparent}
+.quick-profile-card{position:relative;overflow:hidden;border:1px solid #9583ff70;background:linear-gradient(115deg,#251c4c,#122d43 58%,#123b3a);box-shadow:0 12px 30px #03040b66,inset 0 1px #ffffff14;padding:16px;border-radius:19px}
+.quick-profile-card:after{content:"NEXUS ACCESS";position:absolute;right:12px;top:10px;font-size:8px;font-weight:900;letter-spacing:.14em;color:#d2c4ff;opacity:.8}
+.quick-avatar{background:linear-gradient(135deg,#67f5e4 0%,#8d9bff 48%,#ff8bd2 100%);box-shadow:0 0 0 5px #ffffff08,0 0 30px #9d80ff50;color:#0b1022}
+.quick-profile-copy strong{color:#8cf7e8}.quick-profile-copy span{font-size:14px}.quick-profile-copy small{color:#b4b8d9}
+.menu-search-wrap{position:relative;margin:13px 1px 17px}
+.menu-search-wrap:before{content:"⌕";position:absolute;left:13px;top:7px;font-size:23px;color:#9c8cff;pointer-events:none}
+#quickMenuSearch{display:block;width:100%;min-height:46px;border:1px solid #5d568c;border-radius:14px;background:#0a1022;color:#f7f4ff;padding:11px 13px 11px 40px;font-size:16px;outline:none;box-shadow:inset 0 1px #ffffff08;}
+#quickMenuSearch::placeholder{color:#8d94b9}
+#quickMenuSearch:focus{border-color:#8d82ff;box-shadow:0 0 0 3px #8d82ff20,0 0 22px #8d82ff12}
+.menu-section-label{color:#b6a6ff;border-top-color:#8f80ff30;display:flex;align-items:center;gap:8px}
+.menu-section-label:before{content:"";width:5px;height:5px;border-radius:50%;background:#6df5e3;box-shadow:0 0 10px #6df5e3}
+.menuitem{min-height:56px;border:1px solid #ffffff05;border-radius:14px;margin:5px 0;padding:10px 11px;background:#ffffff03}
+.menuitem>span:first-child{background:linear-gradient(145deg,#30285b,#123846);border-color:#8c80ff55;color:#8af6eb;border-radius:11px;box-shadow:inset 0 1px #ffffff0b}
+.menuitem>span:nth-child(2){font-size:12px;color:#f1efff}
+.menuitem small{color:#a4a9cb}
+.menuitem:hover,.menuitem:focus-visible,.menuitem.active{background:linear-gradient(105deg,#34235fdd,#123a4bdf 68%,#164b49dd);border-color:#8d83ff88;box-shadow:0 7px 20px #03040c55;transform:translateX(-3px)}
+.menuitem:hover>span:first-child,.menuitem.active>span:first-child{background:linear-gradient(135deg,#6547b8,#146e75);border-color:#a8fff2;box-shadow:0 0 20px #7af5e533}
+.drawerfoot{border-top-color:#9384ff35;color:#a5abc9}
+@media(max-width:850px){.drawer{width:min(440px,100vw);border-radius:20px 0 0 20px}.drawerhead{padding:14px 15px}.drawerbody{padding:12px 11px calc(20px + env(safe-area-inset-bottom))}.quick-profile-card{padding:14px}.menuitem{min-height:54px}.menu-section-label{margin-top:14px}}
+@media(prefers-reduced-motion:no-preference){.mark{animation:nexusMarkGlow 5s ease-in-out infinite alternate}.quick-profile-card{animation:quickCardGlow 7s ease-in-out infinite alternate}@keyframes nexusMarkGlow{from{filter:saturate(1)}to{filter:saturate(1.35) drop-shadow(0 0 8px #a58aff44)}}@keyframes quickCardGlow{from{box-shadow:0 12px 30px #03040b66,inset 0 1px #ffffff14}to{box-shadow:0 12px 34px #48308b28,inset 0 1px #ffffff19}}}
+</style>
+<script id="network-academy-quick-menu-organizer">
+(function(){
+ const body=document.getElementById('drawerBody');
+ if(!body||body.dataset.organized==='yes')return;
+ body.dataset.organized='yes';
+ const groups=[
+  {before:'quizstudio',label:'LEARN & PRACTICE'},
+  {before:'networkhub',label:'NETWORK & SECURITY'},
+  {before:'owneradmin',label:'PROFILE & PROJECT'},
+  {before:'lessons',label:'STUDY LIBRARY'},
+  {before:'security',label:'INTERACTIVE EXPLORERS'},
+  {before:'labs',label:'TOOLS & LABS'}
+ ];
+ groups.forEach(g=>{const item=body.querySelector('[data-drawer-page="'+g.before+'"]');if(item&&!body.querySelector('[data-menu-section="'+g.before+'"]')){const h=document.createElement('div');h.className='menu-section-label';h.dataset.menuSection=g.before;h.textContent=g.label;body.insertBefore(h,item)}});
 })();
 </script>
 
+
+<script id="nexus-quick-menu-search">
+(function(){
+ const body=document.getElementById('drawerBody');
+ if(!body||body.dataset.searchReady==='yes')return;
+ body.dataset.searchReady='yes';
+ const profile=body.querySelector('.quick-profile-card');
+ const wrap=document.createElement('div');wrap.className='menu-search-wrap';
+ const input=document.createElement('input');input.id='quickMenuSearch';input.type='search';input.placeholder='Search modules, tools, lessons…';input.setAttribute('aria-label','Search Quick Menu');input.autocomplete='off';
+ wrap.appendChild(input);
+ if(profile)profile.insertAdjacentElement('afterend',wrap);else body.insertBefore(wrap,body.firstChild);
+ const items=[...body.querySelectorAll('.menuitem')];
+ const sections=[...body.querySelectorAll('.menu-section-label')];
+ function filter(){const q=input.value.trim().toLowerCase();items.forEach(el=>{el.style.display=el.innerText.toLowerCase().includes(q)?'flex':'none'});sections.forEach((h,i)=>{let next=h.nextElementSibling,found=false;while(next&&!next.classList.contains('menu-section-label')){if(next.classList.contains('menuitem')&&next.style.display!=='none')found=true;next=next.nextElementSibling}h.style.display=(!q||found)?'flex':'none'});}
+ input.addEventListener('input',filter);
+})();
+</script>
+
+<style id="na-owner-student-visibility">
+/* Owner-only controls: hidden for students and guests by default. */
+.na-role-hidden{display:none!important}
+</style>
+<script id="na-owner-student-visibility">
+(function(){
+'use strict';
+const ownerOnlyPages=new Set(['owneradmin','toolkit','cybercenter','architecture','ownerdiagnostics']);
+const runtimeErrors=[];
+window.addEventListener('error',e=>{runtimeErrors.push({type:'JavaScript error',message:String(e.message||'Unknown error'),source:e.filename||'',line:e.lineno||0});if(runtimeErrors.length>30)runtimeErrors.shift()});
+window.addEventListener('unhandledrejection',e=>{runtimeErrors.push({type:'Unhandled promise rejection',message:String(e.reason?.message||e.reason||'Unknown rejection'),source:'',line:0});if(runtimeErrors.length>30)runtimeErrors.shift()});
+function readJSON(key){try{return JSON.parse(localStorage.getItem(key)||'null')}catch{return null}}
+function role(){
+ const primary=readJSON('na_current_user');
+ if(primary&&primary.role)return String(primary.role).toLowerCase();
+ const secondary=readJSON('na_session_local_v1');
+ if(secondary&&secondary.role)return String(secondary.role).toLowerCase();
+ return 'guest';
+}
+function isOwner(){return role()==='owner'}
+function restricted(page){return ownerOnlyPages.has(page)}
+function notificationsHTML(){
+ const studentEvents=naReadStudentEvents();
+ const eventRows=studentEvents.length?studentEvents.map(ev=>'<div class="academy-block"><strong>'+String(ev.label||'Student activity').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))+'</strong><p>'+new Date(ev.at||Date.now()).toLocaleString()+'</p></div>').join(''):'<div class="academy-block"><p>No activity yet. Quiz launches and account actions will appear here in this browser.</p></div>';
+ try{localStorage.setItem('na_student_events_v1',JSON.stringify(studentEvents.map(ev=>({...ev,read:true})))}catch{}
+ setTimeout(naRefreshEventBadges,0);
+ const quizList=readJSON('na_teacher_quizzes_v1')||[];
+ const quizCount=Array.isArray(quizList)?quizList.length:0;
+ return '<div class="academy-page"><div class="academy-kicker">STUDENT CENTER / NOTIFICATIONS</div><h2>Student Events & Notifications</h2><p>Recent learning activity and academy updates. Activity is stored in this browser only; it is not shared across student devices on this static site. These are demo notifications stored or displayed by this browser; this static GitHub Pages site cannot push messages between different students or devices.</p>'+
+ '<h3>Recent student activity</h3>'+eventRows+'<div class="academy-block"><h3>Welcome to Network Academy</h3><p>Your learning space is ready. Open Quiz Studio to take available quizzes and check your results.</p><span class="tag good">ACADEMY UPDATE</span></div>'+
+ '<div class="academy-block"><h3>Quiz Studio</h3><p>'+(quizCount?('There '+(quizCount===1?'is':'are')+' '+quizCount+' quiz'+(quizCount===1?'':'zes')+' saved in this browser. Open Quiz Studio to see what is available.'):'Open Quiz Studio to check for quizzes. No quizzes are saved in this browser yet.')+'</p><button class="btn primary" type="button" data-na-notification-action="quizzes">Open Quiz Studio</button></div>'+
+ '<div class="academy-block"><h3>Learning reminder</h3><p>Study one concept at a time, try a quiz, and review explanations for answers you missed.</p><span class="tag">LEARNING TIP</span></div>'+
+ '<div class="academy-block"><h3>Account safety</h3><p>Never share your password. Your current account system is a local demo, not a secure shared account service.</p><span class="tag">SAFETY NOTICE</span></div></div>';
+}
+pageText.notifications=notificationsHTML();
+moduleMeta.notifications={title:'Notifications',sub:'Basic academy updates and quiz reminders',image:'',alt:'Network Academy notifications'};
+pageText.ownerdiagnostics='<div class="academy-page"><div class="academy-kicker">OWNER CONSOLE / LOCAL DIAGNOSTICS</div><h2>Bug Finder & Site Diagnostics</h2><p>Checks a few important page elements, browser storage, and JavaScript errors observed during this page session. This is a local diagnostic helper, not a complete source-code audit or an external security scan.</p><div class="academy-block"><h3>Local checks</h3><p>Run checks against the current page. Nothing is sent to an external server.</p><button class="btn primary" id="naRunOwnerChecks" type="button">Run checks</button><div class="result" id="naOwnerCheckSummary" aria-live="polite">Ready to run local checks.</div><div id="naOwnerCheckList"></div></div><div class="academy-block"><h3>Session runtime errors</h3><p>Only errors observed after this helper loads are listed here.</p><div id="naOwnerRuntimeErrors" class="result">No checks run yet.</div></div><div class="academy-callout">Owner-only interface visibility is a convenience, not real security. Because this is a static website, real permissions require server-side authentication and authorization.</div></div>';
+moduleMeta.ownerdiagnostics={title:'Bug Finder & Site Diagnostics',sub:'Owner-only local page checks',image:'',alt:'Local diagnostics'};
+function addMenuItem(body,page,label,description,icon,afterPage){
+ if(!body||body.querySelector('[data-drawer-page="'+page+'"]'))return;
+ const b=document.createElement('button');b.type='button';b.className='menuitem';b.dataset.drawerPage=page;b.dataset.menuCategory=page==='notifications'?'project':'labs';
+ b.innerHTML='<span>'+icon+'</span><span>'+label+'<small>'+description+'</small></span>';
+ const anchor=afterPage?body.querySelector('[data-drawer-page="'+afterPage+'"]'):null;
+ if(anchor&&anchor.parentElement===body)anchor.insertAdjacentElement('afterend',b);else body.appendChild(b);
+ b.addEventListener('click',()=>{if(restricted(page)&&!isOwner()){openModule('notifications');return}if(typeof closeDrawer==='function')closeDrawer();openModule(page)});
+}
+function applyVisibility(){
+ const body=document.getElementById('drawerBody');
+ if(body){
+  addMenuItem(body,'notifications','Notifications','Basic updates and quiz reminders','♧','dashboard');
+  if(isOwner())addMenuItem(body,'ownerdiagnostics','Bug Finder & Diagnostics','Owner-only local checks','⌕','owneradmin');
+  body.querySelectorAll('[data-drawer-page]').forEach(b=>{
+   const p=b.dataset.drawerPage;
+   const hide=restricted(p)&&!isOwner();
+   b.classList.toggle('na-role-hidden',hide);
+   b.setAttribute('aria-hidden',hide?'true':'false');
+   if(hide)b.setAttribute('tabindex','-1');else b.removeAttribute('tabindex');
+  });
+ }
+}
+const originalOpenModule=window.openModule;
+if(typeof originalOpenModule==='function'){
+ window.openModule=function(page){
+  if(restricted(page)&&!isOwner()){
+   if(typeof closeDrawer==='function')closeDrawer();
+   return originalOpenModule('notifications');
+  }
+  return originalOpenModule(page);
+ };
+}
+document.addEventListener('click',e=>{
+ const item=e.target.closest('[data-drawer-page]');
+ if(item&&restricted(item.dataset.drawerPage)&&!isOwner()){
+  e.preventDefault();e.stopImmediatePropagation();
+  if(typeof closeDrawer==='function')closeDrawer();
+  if(typeof originalOpenModule==='function')originalOpenModule('notifications');
+  return;
+ }
+ if(e.target.closest('[data-na-notification-action="quizzes"]')){
+  if(typeof closeDrawer==='function')closeDrawer();
+  openModule('quizstudio');
+  return;
+ }
+ if(e.target.closest('#naRunOwnerChecks')){
+  if(!isOwner()){const out=document.getElementById('naOwnerCheckSummary');if(out)out.textContent='Owner sign-in is required.';return}
+  const checks=[
+   ['Module window',!!document.getElementById('moduleOverlay')],
+   ['Module content area',!!document.getElementById('moduleContent')],
+   ['Quick menu',!!document.getElementById('drawerBody')],
+   ['Log In and Create Account at top',!!document.querySelector('#drawerBody [data-na-quick-auth="login"]')&&!!document.querySelector('#drawerBody [data-na-quick-auth="create"]')],
+   ['Profile is informational, not a button',!!document.getElementById('naQuickProfile')&&!document.getElementById('naQuickProfile')?.closest('button')],
+   ['Quiz Studio menu entry',!!document.querySelector('[data-drawer-page="quizstudio"]')],
+   ['Student registration template',typeof pageText!=='undefined'&&!!pageText.accountcenter&&pageText.accountcenter.includes('id="naSignupForm"')],
+   ['Login form template',typeof pageText!=='undefined'&&!!pageText.accountcenter&&pageText.accountcenter.includes('id="naLoginForm"')],
+   ['Owner staff-role template',typeof pageText!=='undefined'&&!!pageText.accountcenter&&pageText.accountcenter.includes('id="naStaffForm"')&&pageText.accountcenter.includes('id="naStaffRole"')],
+   ['Mobile viewport meta',!!document.querySelector('meta[name="viewport"]')],
+   ['Mobile layout styles',!!document.getElementById('na-quickmenu-mobile-polish')],
+   ['Browser storage',(()=>{try{const k='na_diag_test';localStorage.setItem(k,'1');localStorage.removeItem(k);return true}catch{return false}})()]
+  ];
+  const list=document.getElementById('naOwnerCheckList'),summary=document.getElementById('naOwnerCheckSummary'),errors=document.getElementById('naOwnerRuntimeErrors');
+  const passed=checks.filter(x=>x[1]).length;
+  if(summary)summary.textContent=passed+'/'+checks.length+' local checks passed. Review any failed items below.';
+  if(list)list.innerHTML=checks.map(x=>'<div class="result '+(x[1]?'':'warn')+'">'+(x[1]?'✓ ':'⚠ ')+x[0]+': '+(x[1]?'OK':'Not detected or unavailable')+'</div>').join('');
+  if(errors)errors.textContent=runtimeErrors.length?runtimeErrors.map((x,i)=>(i+1)+'. '+x.type+': '+x.message+(x.source?' ('+x.source+':'+x.line+')':'')).join('\n'):'No JavaScript errors have been recorded during this session.';
+ }
+},true);
+const body=document.getElementById('drawerBody');
+if(body)new MutationObserver(applyVisibility).observe(body,{childList:true,subtree:true});
+window.addEventListener('storage',applyVisibility);
+applyVisibility();
+})();
+</script>
+
+<style id="na-quickmenu-mobile-polish">
+/* Account-first quick menu with a persistent read-only profile card. */
+.quick-auth-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:0 0 13px}
+.menu-auth-btn{min-width:0;display:flex;align-items:center;gap:9px;padding:12px 10px;border:1px solid #29465b;border-radius:13px;background:linear-gradient(145deg,#102638,#0c1a2a);color:#e8f7ff;text-align:left;cursor:pointer;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.menu-auth-btn:hover{transform:translateY(-1px);border-color:#59d8c6;background:linear-gradient(145deg,#123c46,#102237)}
+.menu-auth-primary{border-color:#26796e;background:linear-gradient(145deg,#174c4b,#102b3c)}
+.menu-auth-icon{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:9px;background:#57e4ce18;color:#72f4df;font-size:18px}
+.menu-auth-btn>span:last-child{min-width:0;font-size:12px;font-weight:750}.menu-auth-btn small{display:block;margin-top:4px;color:#9db6c9;font-size:9px;font-weight:450;line-height:1.35}
+.quick-profile-card{display:flex;align-items:center;gap:12px;margin:0 0 14px;padding:13px;border:1px solid #28475a;border-radius:15px;background:radial-gradient(ellipse at 0% 0%,#1b4a5038,transparent 70%),linear-gradient(140deg,#102235,#0b1726);pointer-events:none;user-select:text}
+.quick-profile-card .quick-avatar{flex:0 0 42px;width:42px;height:42px;display:grid;place-items:center;border:1px solid #367b79;border-radius:13px;background:#143b43;color:#82f4e2;font-size:19px}
+.quick-profile-copy{min-width:0;display:flex;flex-direction:column;gap:4px}.quick-profile-copy strong{color:#e7fbff;font-size:11px;letter-spacing:.07em}.quick-profile-copy span{color:#9edbd6;font-size:11px;overflow-wrap:anywhere}.quick-profile-copy small{color:#829bb0;font-size:9px;line-height:1.4}
+.drawerbody{padding:14px;overscroll-behavior:contain;scrollbar-width:thin}.menuitem{min-height:47px;line-height:1.35}.menuitem span:last-child{min-width:0;overflow-wrap:anywhere}.menuitem small{line-height:1.45}.menu-results{margin-top:8px}
+@media(max-width:650px){.topbar{align-items:center;gap:8px;padding:10px 12px;min-height:66px}.brand{min-width:0;gap:8px}.brand strong{font-size:11px;letter-spacing:.04em}.brand small{font-size:8px}.topright{display:flex;align-items:center;justify-content:flex-end;gap:6px;flex-wrap:wrap;min-width:0}#topCreateProfile,#topLogin{display:none}#topQuiz{padding:9px 10px;font-size:11px}#openMenu{width:39px;height:39px;flex:0 0 39px}.drawer{width:min(420px,100vw);max-width:100vw;border-left:0}.drawerhead{padding:15px 16px}.drawerbody{padding:12px 13px calc(22px + env(safe-area-inset-bottom))}.quick-auth-actions{gap:8px}.menu-auth-btn{padding:11px 8px;gap:7px}.menu-auth-icon{width:27px;height:27px;flex-basis:27px}.quick-profile-card{padding:11px}.menu-search-wrap input{min-width:0;width:100%}.menu-filters{display:flex;flex-wrap:wrap;gap:6px}.menu-filter{flex:1 1 auto;min-width:58px;padding:8px 6px}.menuitem{padding:12px 10px;margin:3px 0}.drawerfoot{padding:12px 14px;font-size:9px}.module-window{width:100%;max-width:100%;max-height:100dvh;border-radius:0}.module-topbar{padding:12px}.module-content{padding:14px!important}.inputrow{display:grid!important;grid-template-columns:minmax(0,1fr)!important}.inputrow>*{min-width:0!important;width:100%!important}.na-extra-grid{grid-template-columns:minmax(0,1fr)!important}.na-actions{display:grid!important;grid-template-columns:minmax(0,1fr)!important}.na-actions .btn,.inputrow .btn{width:100%;min-width:0}}
+@media(max-width:380px){.brand .mark{display:none}.brand strong{font-size:10px}.topright{gap:4px}#topQuiz{font-size:10px;padding:8px}.quick-auth-actions{grid-template-columns:1fr}.menu-auth-btn{min-height:55px}.menu-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){.menu-auth-btn,.drawer,.drawerback{transition:none!important}}
+</style>
+<script id="na-quickmenu-account-fixes">
+(function(){
+'use strict';
+const $=s=>document.querySelector(s);
+function read(key){try{return JSON.parse(localStorage.getItem(key)||'null')}catch{return null}}
+function currentUser(){const u=read('na_current_user');if(u&&u.username)return {name:u.username,role:String(u.role||'student').toLowerCase(),createdAt:u.createdAt||''};const session=read('na_session_local_v1');if(session&&session.name)return {name:session.name,role:String(session.role||'student').toLowerCase(),createdAt:session.createdAt||''};return null}
+function renderProfile(){const card=$('#naQuickProfile'),name=$('#naQuickProfileName'),role=$('#naQuickProfileRole'),status=$('#naQuickProfileStatus'),avatar=$('#naQuickAvatar');if(!card||!name||!role||!status)return;const setText=(el,value)=>{if(el&&el.textContent!==value)el.textContent=value};const u=currentUser();if(!u){setText(name,'GUEST PROFILE');setText(role,'Not signed in');setText(status,'Create an account to start learning');setText(avatar,'⌘');return}const labels={owner:'Platform Owner',admin:'Administrator',teacher:'Teacher',student:'Student'};setText(name,u.name);setText(role,labels[u.role]||'Student');setText(status,'Local browser profile · '+(u.createdAt?'Account active':'Session active'));setText(avatar,u.role==='owner'?'♛':u.role==='teacher'?'✎':u.role==='admin'?'⚙':'⌘')}
+function openAccount(mode){
+ const overlay=document.getElementById('moduleOverlay');
+ const content=document.getElementById('moduleContent');
+ try{
+  if(typeof openModule==='function')openModule('accountcenter');
+ }catch(err){
+  console.error('Account Center navigation failed; opening the account view directly:',err);
+ }
+ /* Ensure the two Quick Menu buttons still open the account forms if a module initializer fails. */
+ if(overlay&&content&&!overlay.classList.contains('open')){
+  try{
+   const title=document.getElementById('moduleHeroTitle');
+   const subtitle=document.getElementById('moduleHeroSubtitle');
+   const cover=document.getElementById('moduleCover');
+   if(title)title.textContent='Create Profile · Log In';
+   if(subtitle)subtitle.textContent='Manage your local Network Academy profile';
+   if(cover){cover.style.backgroundImage='linear-gradient(90deg,#070611F2,#07061155)';cover.innerHTML='<div class="module-cover-copy"><div class="eyebrow">NETWORK ACADEMY / ACCOUNT CENTER</div><h2>Create Profile · Log In</h2><p>Student profile access</p></div>';}
+   if(typeof pageText!=='undefined'&&pageText.accountcenter)content.innerHTML=pageText.accountcenter;
+   overlay.classList.add('open');
+   overlay.setAttribute('aria-hidden','false');
+   document.body.style.overflow='hidden';
+   try{if(typeof initAccountCenter==='function')initAccountCenter()}catch(initErr){console.error('Account form setup issue:',initErr)}
+  }catch(fallbackErr){console.error('Could not display the account view:',fallbackErr)}
+ }
+ setTimeout(()=>{
+  const target=document.getElementById(mode==='create'?'naSignupUser':'naLoginUser');
+  if(target){target.focus({preventScroll:true});target.scrollIntoView({block:'center',behavior:'smooth'});return}
+  const form=document.getElementById(mode==='create'?'naSignupForm':'naLoginForm');
+  if(form)form.scrollIntoView({block:'center',behavior:'smooth'});
+ },250);
+}
+document.addEventListener('click',e=>{const target=e.target;const btn=target&&target.closest?target.closest('[data-na-quick-auth]'):null;if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();openAccount(btn.dataset.naQuickAuth)},true);
+document.addEventListener('submit',e=>{if(['naLoginForm','naSignupForm','naStaffForm'].includes(e.target.id)){setTimeout(renderProfile,80);setTimeout(renderProfile,350)}});
+document.addEventListener('click',e=>{if(e.target.closest('#naLogout')||e.target.closest('#naLogoutBtn'))setTimeout(renderProfile,60)});
+window.addEventListener('storage',renderProfile);document.addEventListener('DOMContentLoaded',renderProfile);
+const observer=new MutationObserver(renderProfile);observer.observe(document.documentElement,{childList:true,subtree:true});renderProfile();
+})();
+</script>
+
+<!-- Independent Quick Menu interaction recovery: isolated from the main app script -->
+<script id="naQuickMenuRecoveryLayer">
+(function(){
+  if(window.__naQuickMenuRecoveryInstalled)return;
+  window.__naQuickMenuRecoveryInstalled=true;
+  function byId(id){return document.getElementById(id)}
+  function safeCall(fn){try{if(typeof fn==='function')return fn()}catch(err){console.error('Network Academy menu action failed:',err)}}
+  function closeMenu(){byId('drawer')?.classList.remove('open');byId('drawerBack')?.classList.remove('open');byId('drawer')?.setAttribute('aria-hidden','true')}
+  function openMenu(){byId('drawer')?.classList.add('open');byId('drawerBack')?.classList.add('open');byId('drawer')?.setAttribute('aria-hidden','false')}
+  function module(page){if(typeof openModule==='function'){safeCall(()=>openModule(page));return true}return false}
+  function account(mode){
+    if(!module('accountcenter'))return;
+    setTimeout(function(){
+      const form=byId(mode==='create'?'naSignupForm':'naLoginForm');
+      form?.scrollIntoView({behavior:'smooth',block:'center'});
+      const field=byId(mode==='create'?'naSignupUser':'naLoginUser');
+      field?.focus({preventScroll:true});
+    },220);
+  }
+  function record(label){safeCall(()=>{if(typeof naRecordStudentEvent==='function')naRecordStudentEvent(label)})}
+  function applyMenuFilter(){
+    const q=(byId('menuSearch')?.value||'').trim().toLowerCase();
+    const active=document.querySelector('[data-menu-filter].active')?.dataset.menuFilter||'all';
+    document.querySelectorAll('#drawerBody [data-drawer-page]').forEach(b=>{
+      const cat=b.dataset.menuCategory||'learn';
+      b.hidden=!!((active!=='all'&&cat!==active)||(q&&!b.textContent.toLowerCase().includes(q)));
+    });
+    const visible=[...document.querySelectorAll('#drawerBody [data-drawer-page]')].filter(b=>!b.hidden).length;
+    const out=byId('menuResults');if(out)out.innerHTML=(q||active!=='all'?'FILTERED DESTINATIONS':'ALL DESTINATIONS')+' <span>'+visible+' available</span>';
+  }
+  document.addEventListener('click',function(e){
+    const target=e.target instanceof Element?e.target:null;if(!target)return;
+    const auth=target.closest('[data-na-quick-auth]');
+    if(auth){e.preventDefault();e.stopImmediatePropagation();account(auth.dataset.naQuickAuth);return}
+    const action=target.closest('[data-quick-action]');
+    if(action){
+      e.preventDefault();e.stopImmediatePropagation();
+      const key=action.dataset.quickAction;
+      if(key==='quiz-en'||key==='quiz-ku'){
+        if(key==='quiz-ku'&&typeof kurdishMode!=='undefined'&&!kurdishMode)safeCall(()=>setLanguage());
+        if(key==='quiz-en'&&typeof kurdishMode!=='undefined'&&kurdishMode)safeCall(()=>setLanguage());
+        closeMenu();module('quizstudio');record(key==='quiz-ku'?'Opened Kurdish quiz':'Opened English quiz');return;
+      }
+      if(key==='events'){closeMenu();module('notifications');record('Opened student activity center');return}
+      const page={'explore-network':'internetmap','start-learning':'lessons','command-lab':'terminal'}[key];
+      if(page){closeMenu();module(page);return}
+    }
+    const drawerItem=target.closest('#drawerBody [data-drawer-page]');
+    if(drawerItem){e.preventDefault();e.stopImmediatePropagation();const page=drawerItem.dataset.drawerPage;closeMenu();if(page==='dashboard'){openMenu();return}if(typeof showDrawerPage==='function')safeCall(()=>showDrawerPage(page));else module(page);return}
+    const filter=target.closest('#drawerBody [data-menu-filter]');
+    if(filter){e.preventDefault();e.stopImmediatePropagation();document.querySelectorAll('#drawerBody [data-menu-filter]').forEach(x=>x.classList.toggle('active',x===filter));applyMenuFilter();return}
+    if(target.closest('#openMenu')){e.preventDefault();e.stopImmediatePropagation();openMenu();return}
+    if(target.closest('#closeMenu')||target.closest('#drawerBack')){e.preventDefault();e.stopImmediatePropagation();closeMenu();return}
+    if(target.closest('#topNotifications')){e.preventDefault();e.stopImmediatePropagation();module('notifications');return}
+  },true);
+  document.addEventListener('input',function(e){if(e.target&&e.target.id==='menuSearch')applyMenuFilter()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenu()}});
+  document.addEventListener('DOMContentLoaded',function(){applyMenuFilter()});
+  if(document.readyState!=='loading')applyMenuFilter();
+})();
+</script>
+
+<style id="na-quickmenu-responsive-repair">
+/* One consistent Quick Menu: tidy on desktop, edge-to-edge and touch-friendly on phones. */
+.drawer{width:min(410px,94vw);max-width:100%;height:100vh;height:100dvh;box-sizing:border-box;overscroll-behavior:contain}
+.drawerhead{flex:0 0 auto;min-height:66px;padding:14px 16px;padding-top:max(14px,env(safe-area-inset-top));}
+.drawerhead .iconbtn{flex:0 0 42px;min-width:42px;min-height:42px;touch-action:manipulation}
+.drawerbody{flex:1 1 auto;min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:14px 15px calc(22px + env(safe-area-inset-bottom))}
+.drawerbody *{box-sizing:border-box}
+.quick-auth-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.menu-auth-btn{min-height:62px}
+.quick-study-actions{grid-template-columns:1fr;gap:6px}
+.quick-study-actions .menuitem{min-height:48px;padding:10px 11px}
+.drawerbody .menuitem{width:100%;min-width:0;min-height:46px;line-height:1.3;overflow-wrap:anywhere;touch-action:manipulation}
+.drawerbody .menuitem>span:first-child{flex:0 0 25px}
+.drawerbody .menuitem>span:last-child{min-width:0;flex:1}
+.drawerbody .menuitem small{line-height:1.4;white-space:normal}
+.menu-filters{grid-template-columns:repeat(4,minmax(0,1fr))}
+.menu-filter{min-width:0;min-height:38px;white-space:normal;overflow-wrap:anywhere}
+.menu-search-wrap{position:sticky;top:-14px;z-index:3;background:#080f1df5}
+@media(max-width:600px){
+ .drawer{right:0;top:0;width:100%;max-width:100%;border-left:0;border-radius:0;box-shadow:none}
+ .drawerhead{padding-left:16px;padding-right:12px}
+ .drawerbody{padding:12px 13px calc(20px + env(safe-area-inset-bottom))}
+ .menu-hero{padding:12px;gap:10px;border-radius:14px}
+ .menu-orb{width:42px;height:42px;flex-basis:42px;border-radius:12px}
+ .menu-hero strong{font-size:13px}
+ .quick-auth-actions{gap:7px}
+ .menu-auth-btn{padding:10px 8px;gap:7px;min-height:60px}
+ .menu-auth-icon{width:27px;height:27px;flex-basis:27px;font-size:16px}
+ .menu-auth-btn>span:last-child{font-size:11px}
+ .menu-auth-btn small{font-size:9px}
+ .quick-study-actions{padding:7px;margin:8px 0 10px}
+ .quick-study-actions .menuitem{min-height:45px;padding:9px}
+ .menu-filters{gap:5px}
+ .menu-filter{font-size:10px;padding:8px 2px}
+ .menu-results{font-size:8px;letter-spacing:.09em}
+}
+@media(max-width:360px){
+ .quick-auth-actions{grid-template-columns:1fr}
+ .menu-auth-btn{min-height:52px}
+ .menu-hero{align-items:flex-start}
+ .menu-orb{width:38px;height:38px;flex-basis:38px}
+}
+@media(prefers-reduced-motion:reduce){
+ .drawer,.drawerback,.menu-auth-btn{transition:none!important}
+}
+</style>
+
+
+
 </body>
 </html>
-
-<style id="na-quick-menu-readable-type">
-/* Readable lesson typography for students and teachers; restrained rather than oversized. */
-.module-content .academy-page{font-size:14px;line-height:1.7}
-.module-content .academy-page>p,.module-content .academy-block p,.module-content .academy-block li,.module-content .academy-page>ul li,.module-content .academy-page>ol li{font-size:14px!important;line-height:1.75!important;color:#c8d8e6}
-.module-content .academy-block h3{font-size:15px!important;line-height:1.4!important}
-.module-content .academy-callout,.module-content .notice{font-size:13px!important;line-height:1.7!important}
-.module-content .academy-quiz strong{font-size:14px!important;line-height:1.5}
-.module-content .academy-quiz button,.module-content button[data-local-quiz]{font-size:13px!important;line-height:1.55;padding:11px 12px}
-.module-content .academy-quiz .quiz-result{font-size:13px!important;line-height:1.6}
-.module-content .academy-kicker{font-size:11px;line-height:1.5;letter-spacing:.08em}
-.module-content label,.module-content input,.module-content select,.module-content textarea{font-size:14px}
-@media(max-width:560px){.module-content .academy-page>p,.module-content .academy-block p,.module-content .academy-block li,.module-content .academy-page>ul li,.module-content .academy-page>ol li{font-size:14px!important}.module-content .academy-block{padding:14px}.module-content .academy-page{gap:13px}}
-</style>
