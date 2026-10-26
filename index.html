@@ -1404,5 +1404,36 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 @media(max-width:560px){.module-content .academy-page>p,.module-content .academy-block p,.module-content .academy-block li,.module-content .academy-page>ul li,.module-content .academy-page>ol li{font-size:14px!important}.module-content .academy-block{padding:14px}.module-content .academy-page{gap:13px}}
 </style>
 
+
+<script id="na-account-navigation-fix">
+/* Reliable navigation for dashboard and Quick Menu account buttons. */
+(function(){
+  function openAccount(mode){
+    if(typeof window.openModule==='function') window.openModule('accountcenter');
+    if(typeof window.closeDrawer==='function') window.closeDrawer();
+    window.setTimeout(function(){
+      var id=mode==='signup'?'naSignupUser':'naLoginUser';
+      var field=document.getElementById(id);
+      if(field){field.focus({preventScroll:true});field.scrollIntoView({behavior:'smooth',block:'center'});}
+    },180);
+  }
+  document.addEventListener('click',function(e){
+    var el=e.target&&e.target.closest?e.target.closest('button,a,[role="button"],[data-account-open],[data-account-focus]'):null;
+    if(!el)return;
+    /* Do not hijack the actual submit buttons inside the account forms. */
+    if(el.closest('#moduleContent form'))return;
+    var mode=el.getAttribute('data-account-focus')||el.getAttribute('data-account-open')||'';
+    var text=(el.innerText||el.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
+    if(!mode){
+      if(/\bsign\s*up\b|\bcreate\s+(profile|account)\b/.test(text))mode='signup';
+      else if(/\blog\s*in\b|\bsign\s*in\b/.test(text))mode='login';
+    }
+    if(mode!=='signup'&&mode!=='login')return;
+    e.preventDefault();e.stopPropagation();if(e.stopImmediatePropagation)e.stopImmediatePropagation();
+    openAccount(mode);
+  },true);
+})();
+</script>
+
 </body>
 </html>
