@@ -1215,8 +1215,20 @@ $('#moduleContent').addEventListener('click',e=>{if(e.target.id==='studentDemoCl
 bindDrawerButtons();return}openModule(page)}
 function naHandleAccountOpen(mode){
  if(mode!=='login'&&mode!=='signup')return;
- closeDrawer();
- openModule('accountcenter');
+ try{closeDrawer();openModule('accountcenter');}
+ catch(err){
+  console.error('Network Academy account navigation failed; opening fallback:',err);
+  try{
+   const html=pageText&&pageText.accountcenter;
+   if(!html)throw new Error('Account page markup is unavailable');
+   moduleContent.innerHTML=html;
+   initAccountCenter();
+   moduleOverlay.classList.add('open');
+   moduleOverlay.setAttribute('aria-hidden','false');
+   document.body.style.overflow='hidden';
+   closeDrawer();
+  }catch(fallbackErr){console.error('Network Academy account fallback failed:',fallbackErr);alert('Account page could not open. Refresh this page and try again.');return;}
+ }
  window.setTimeout(function(){
   const id=mode==='signup'?'naSignupUser':'naLoginUser';
   const field=document.getElementById(id);
